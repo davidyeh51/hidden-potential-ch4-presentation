@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《隱性潛能》CH4 改變日常磨練——10分鐘麥肯錫顧問導讀簡報</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* McKinsey Strictly 3-Color Palette: Deep Navy + Neutral Slate Gray + Amber Gold Accent */
+      --navy-950: #051C2C;
+      --navy-800: #112E46;
+      --navy-700: #1B4160;
+      --navy-100: #E8EFF5;
+      --navy-50:  #F3F7FA;
+
+      --gray-900: #0F172A;
+      --gray-700: #334155;
+      --gray-600: #475569;
+      --gray-500: #64748B;
+      --gray-300: #CBD5E1;
+      --gray-200: #E2E8F0;
+      --gray-100: #F1F5F9;
+      --gray-50:  #F8FAFC;
+      --white:    #FFFFFF;
+
+      --amber-600: #D97706;
+      --amber-500: #F59E0B;
+      --amber-100: #FEF3C7;
+      --amber-50:  #FFFBEB;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--gray-900);
+      color: var(--gray-900);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation Bar */
+    .topbar {
+      background-color: var(--navy-950);
+      color: var(--white);
+      height: 52px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      flex-shrink: 0;
+      z-index: 100;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      background-color: var(--amber-600);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    .topbar-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-100);
+      letter-spacing: 0.02em;
+    }
+
+    .topbar-meta {
+      font-size: 12px;
+      color: var(--gray-300);
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+      padding-left: 12px;
+    }
+
+    .topbar-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-nav {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-nav:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-nav.active {
+      background: var(--amber-600);
+      border-color: var(--amber-600);
+      color: var(--white);
+    }
+
+    .slide-counter {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--amber-500);
+      min-width: 68px;
+      text-align: center;
+    }
+
+    /* Progress Bar */
+    .progress-track {
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--amber-600);
+      width: 7.14%;
+      transition: width 0.25s ease;
+    }
+
+    /* Main Workspace Container */
+    .stage-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 24px;
+      gap: 16px;
+      max-width: 1480px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Slide Canvas (16:9 Executive Consulting Aspect) */
+    .slide-canvas {
+      width: 100%;
+      max-width: 1360px;
+      min-height: 620px;
+      background: var(--white);
+      border-radius: 4px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      border-top: 5px solid var(--navy-950);
+    }
+
+    .slide-canvas.active {
+      display: flex;
+    }
+
+    /* Cover Slide Special Styling */
+    .slide-canvas.cover-slide {
+      background: var(--navy-950);
+      color: var(--white);
+      border-top: 5px solid var(--amber-600);
+    }
+
+    /* Slide Header (McKinsey Action Title) */
+    .slide-header {
+      padding: 28px 44px 18px 44px;
+      border-bottom: 1px solid var(--gray-200);
+      background: var(--white);
+    }
+
+    .slide-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .eyebrow-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy-700);
+      background: var(--navy-100);
+      padding: 3px 10px;
+      border-left: 3px solid var(--navy-950);
+    }
+
+    .eyebrow-pace {
+      font-size: 12px;
+      color: var(--gray-500);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .action-title {
+      font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.38;
+      color: var(--navy-950);
+      letter-spacing: -0.01em;
+    }
+
+    .action-title .accent {
+      color: var(--amber-600);
+      border-bottom: 2px solid var(--amber-500);
+    }
+
+    /* Slide Body */
+    .slide-body {
+      padding: 24px 44px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    /* Core Thesis Banner inside Chapter Slides */
+    .thesis-bar {
+      background: var(--navy-50);
+      border-left: 4px solid var(--navy-950);
+      padding: 10px 16px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--gray-900);
+    }
+
+    .thesis-label {
+      font-size: 11px;
+      font-weight: 700;
+      background: var(--navy-950);
+      color: var(--white);
+      padding: 2px 8px;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+
+    /* Grid Systems (Max 3 Groups per Slide) */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      flex: 1;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      flex: 1;
+    }
+
+    .grid-2-asym {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      flex: 1;
+    }
+
+    /* Consulting Card */
+    .mck-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-top: 3px solid var(--navy-800);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .mck-card.highlight {
+      background: var(--amber-50);
+      border-color: #FDE68A;
+      border-top: 3px solid var(--amber-600);
+    }
+
+    .card-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--navy-700);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mck-card.highlight .card-num {
+      color: var(--amber-600);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy-950);
+      line-height: 1.35;
+    }
+
+    .card-kpi {
+      font-family: 'Inter', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--amber-600);
+      line-height: 1.1;
+      margin: 2px 0;
+    }
+
+    .card-kpi-sub {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-600);
+    }
+
+    .card-text {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--gray-700);
+    }
+
+    .card-text strong {
+      color: var(--navy-950);
+      font-weight: 700;
+    }
+
+    /* Bottom Takeaway Bar (One-Sentence Summary) */
+    .bottom-takeaway {
+      background: var(--navy-950);
+      color: var(--white);
+      padding: 11px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .takeaway-badge {
+      background: var(--amber-600);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+
+    /* Slide Footer */
+    .slide-footer {
+      padding: 10px 44px;
+      border-top: 1px solid var(--gray-200);
+      background: var(--gray-50);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: var(--gray-500);
+    }
+
+    /* Speaker Notes Dock (3-Part Consulting Script) */
+    .speaker-notes-panel {
+      width: 100%;
+      max-width: 1360px;
+      background: var(--navy-950);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-left: 4px solid var(--amber-600);
+      border-radius: 4px;
+      padding: 16px 24px;
+      color: var(--gray-100);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .speaker-notes-panel.hidden {
+      display: none;
+    }
+
+    .notes-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .notes-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--amber-500);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      gap: 18px;
+    }
+
+    .note-block {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 10px 14px;
+      border-radius: 3px;
+      border-top: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .note-block.primary {
+      border-top-color: var(--amber-500);
+    }
+
+    .note-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--amber-500);
+      margin-bottom: 4px;
+    }
+
+    .note-content {
+      font-size: 13px;
+      line-height: 1.58;
+      color: var(--gray-200);
+    }
+
+    /* Data Tables */
+    .mck-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .mck-table th {
+      background: var(--navy-950);
+      color: var(--white);
+      text-align: left;
+      padding: 9px 12px;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .mck-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .mck-table tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
+    .kpi-pill {
+      display: inline-block;
+      background: var(--amber-100);
+      color: var(--amber-600);
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+    }
+
+    /* Architecture & Causal Chain Boxes */
+    .arch-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .arch-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .arch-stage-label {
+      background: var(--navy-950);
+      color: var(--white);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13.5px;
+      border-left: 4px solid var(--amber-600);
+    }
+
+    .arch-stage-sub {
+      font-size: 11px;
+      color: var(--gray-300);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    .arch-stage-content {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    /* Causal Chain (Slide 11) */
+    .chain-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      flex: 1;
+    }
+
+    .chain-step {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-top: 4px solid var(--navy-950);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .chain-step.final {
+      background: var(--amber-50);
+      border-top-color: var(--amber-600);
+    }
+
+    /* Overview Grid Mode */
+    body.overview-mode .stage-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    body.overview-mode .slide-canvas {
+      display: flex !important;
+      min-height: 440px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    body.overview-mode .slide-canvas:hover {
+      transform: translateY(-4px);
+      outline: 3px solid var(--amber-500);
+    }
+
+    body.overview-mode .speaker-notes-panel {
+      display: none !important;
+    }
+
+    @media (max-width: 1024px) {
+      .grid-3, .grid-2, .grid-2-asym, .chain-container, .notes-grid {
+        grid-template-columns: 1fr;
+      }
+      .arch-row {
+        grid-template-columns: 1fr;
+      }
+      .slide-header, .slide-body, .slide-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .action-title {
+        font-size: 19px;
+      }
+    }
+
+    @media print {
+      body {
+        background: var(--white);
+      }
+      .topbar, .progress-track {
+        display: none !important;
+      }
+      .stage-wrapper {
+        display: block;
+        padding: 0;
+      }
+      .slide-canvas {
+        display: flex !important;
+        page-break-after: always;
+        box-shadow: none;
+        border: 1px solid var(--gray-300);
+        margin-bottom: 20px;
+      }
+      .speaker-notes-panel {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="brand-badge">McKinsey Briefing</span>
+      <span class="topbar-title">《隱性潛能》CH4：改變日常磨練——為練習注入熱情</span>
+      <span class="topbar-meta">亞當・格蘭特（Adam Grant）著 ｜ 原書 p.146–p.174 完整導讀</span>
+    </div>
+    <div class="topbar-controls">
+      <button class="btn-nav" onclick="prevSlide()" title="上一頁 (←)">◀ 上一頁</button>
+      <span class="slide-counter" id="slideCounter">1 / 14</span>
+      <button class="btn-nav" onclick="nextSlide()" title="下一頁 (→)">下一頁 ▶</button>
+      <button class="btn-nav active" id="btnNotes" onclick="toggleNotes()" title="切換講者備忘稿 (N)">🎙️ 講稿 (N)</button>
+      <button class="btn-nav" id="btnOverview" onclick="toggleOverview()" title="全覽模式 (G)">⊞ 全覽 (G)</button>
+      <button class="btn-nav" onclick="window.print()" title="列印 / 匯出 PDF">🖨️ PDF</button>
+    </div>
+  </header>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <main class="stage-wrapper">
+
+    <!-- ==========================================
+         SLIDE 1: 封面 (Cover)
+         ========================================== -->
+    <section class="slide-canvas cover-slide active" data-slide="1">
+      <div class="slide-body" style="padding: 52px 56px; justify-content: space-between;">
+        <div>
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+            <span style="background:var(--amber-600); color:#fff; font-size:12px; font-weight:700; padding:4px 12px; letter-spacing:0.08em;">10-MINUTE EXECUTIVE BRIEFING</span>
+            <span style="color:var(--gray-300); font-size:13px; font-family:'Inter',sans-serif;">PART 2 動力架構（搭建克服障礙的鷹架）｜CHAPTER 4（p.146–p.174）</span>
+          </div>
+          <h1 style="font-family:'Noto Serif TC', serif; font-size:44px; font-weight:900; line-height:1.22; color:var(--white); margin-bottom:14px;">
+            《隱性潛能》改變日常磨練：<br>
+            <span style="color:var(--amber-500);">為練習注入和諧式熱情</span>
+          </h1>
+          <p style="font-size:17px; color:var(--gray-300); margin-bottom:28px;">
+            作者：<strong style="color:var(--white);">亞當・格蘭特（Adam Grant）</strong> ｜ 導讀節奏：14 頁精華・每頁 40–45 秒・10 分鐘完整掌握
+          </p>
+
+          <!-- 一句話核心主張 -->
+          <div style="background:rgba(255,255,255,0.07); border-left:5px solid var(--amber-500); padding:20px 24px; max-width:1100px;">
+            <div style="font-size:12px; font-weight:700; color:var(--amber-500); letter-spacing:0.08em; margin-bottom:6px;">
+              🎯 一句話核心主張（本章到底在解決什麼問題？）
+            </div>
+            <div style="font-size:19px; font-weight:700; line-height:1.55; color:var(--white);">
+              釋放隱性潛能的最好方法，並不是靠意志力忍受每天單調的磨練，而是透過「<span style="color:var(--amber-500);">刻意玩樂、交錯練習與定時休息</span>」打造動力鷹架，把每天的苦練轉變成日常的快樂泉源。
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Key Anchor Metrics from Chapter 4 -->
+        <div class="grid-3" style="flex:0; margin-top:28px;">
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.14); padding:16px 20px;">
+            <div style="font-family:'Inter',sans-serif; font-size:28px; font-weight:800; color:var(--amber-500);">127 項研究 / 4.5萬人</div>
+            <div style="font-size:13px; color:var(--gray-200); margin-top:4px;">後設分析證實：唯有「和諧式熱情」支撐，堅持到底才更能轉化為卓越績效（p.152）</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.14); padding:16px 20px;">
+            <div style="font-family:'Inter',sans-serif; font-size:28px; font-weight:800; color:var(--amber-500);">+43% 銷售額 ／ 8%→40%</div>
+            <div style="font-size:13px; color:var(--gray-200); margin-top:4px;">業務角色扮演提升 43% 門票銷量（p.156）；跟練柯瑞刻意玩樂 50 天三分球命中率暴增 5 倍（p.167）</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.14); padding:16px 20px;">
+            <div style="font-family:'Inter',sans-serif; font-size:28px; font-weight:800; color:var(--amber-500);">20 分鐘法則 ／ +10~30%</div>
+            <div style="font-size:13px; color:var(--gray-200); margin-top:4px;">每 20 分鐘交錯練習與定時休息，學後休息 10 分鐘提升 10%–30% 記憶力（p.166, 171, 173）</div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.15); padding-top:14px; font-size:12.5px; color:var(--gray-300);">
+          <span>題辭：「滿足我們的，既不是工作，也不是玩樂；既不是目的，也不是漫無目的，而是中間的反覆橫跳。」——遊戲設計師伯納德・德科文（p.146）</span>
+          <span>按 <strong>→</strong> 或空白鍵開始導讀</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2: 全章架構圖 (Architecture)
+         ========================================== -->
+    <section class="slide-canvas" data-slide="2">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">2. 全書（本章）架構圖 ｜ 整體邏輯骨架</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒 ｜ 來源：p.146–p.174</span>
+        </div>
+        <h2 class="action-title">
+          突破日常磨練的倦怠瓶頸，需以「<span class="accent">和諧式熱情</span>」取代強迫苦練，並靠三大動力鷹架支撐持續精進
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="arch-flow">
+          <!-- Layer 1: Problem -->
+          <div class="arch-row">
+            <div class="arch-stage-label" style="background:var(--gray-700); border-left-color:var(--gray-300);">
+              <span>① 問題診斷</span>
+              <span class="arch-stage-sub">傳統苦練的雙重陷阱</span>
+            </div>
+            <div class="arch-stage-content">
+              <div style="flex:1;">
+                <strong style="color:var(--navy-950); font-size:14.5px;">盲目崇拜「一萬小時定律」與單調刻意練習（「我必須練」的強迫壓力）</strong>
+                <p style="font-size:13px; color:var(--gray-600); margin-top:3px;">強迫型工作者工時雖長，績效卻未優於同儕，反而同時陷入生理與心理雙重耗竭（p.150–151）：</p>
+              </div>
+              <div style="display:flex; gap:10px;">
+                <div style="background:var(--white); border:1px solid var(--gray-300); padding:8px 14px; font-size:12.5px;">
+                  <strong style="color:var(--navy-950);">🔥 過勞（Burnout）</strong><br><span style="color:var(--gray-600);">過度工作造成情緒耗竭</span>
+                </div>
+                <div style="background:var(--white); border:1px solid var(--gray-300); padding:8px 14px; font-size:12.5px;">
+                  <strong style="color:var(--navy-950);">🧊 悶爆（Boreout）</strong><br><span style="color:var(--gray-600);">刺激不足與單調造成麻木</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layer 2: Framework -->
+          <div class="arch-row">
+            <div class="arch-stage-label" style="background:var(--navy-800);">
+              <span>② 核心框架</span>
+              <span class="arch-stage-sub">第 1 節：進入和諧狀態</span>
+            </div>
+            <div class="arch-stage-content" style="background:var(--navy-50); border-color:var(--navy-700);">
+              <div style="flex:1;">
+                <strong style="color:var(--navy-950); font-size:15px;">從「強迫式熱情（我應該）」轉向「和諧式熱情（我想要）」→ 自然進入心流（Flow）</strong>
+                <p style="font-size:13px; color:var(--gray-700); margin-top:3px;">國際鋼琴家幼時每日僅練 1 小時（Sosniak 研究）；<strong>127 項研究、逾 45,000 人</strong>證實：有熱情支撐，堅持才更能帶來卓越表現（p.151–152）。</p>
+              </div>
+              <span class="kpi-pill" style="font-size:13px; padding:6px 12px;">練習豐富生活，而非主宰生活</span>
+            </div>
+          </div>
+
+          <!-- Layer 3: Three Scaffolding Pillars -->
+          <div class="arch-row">
+            <div class="arch-stage-label">
+              <span>③ 三大方法鷹架</span>
+              <span class="arch-stage-sub">第 2–4 節互相支撐</span>
+            </div>
+            <div class="grid-3" style="gap:12px;">
+              <div class="mck-card" style="padding:12px 14px;">
+                <div class="card-num">支柱 A ｜ 第 2 節：樂在玩樂</div>
+                <div class="card-title" style="font-size:14.5px;">刻意玩樂（Deliberate Play）</div>
+                <div class="card-text" style="font-size:12.5px;">
+                  融合「結構化精進」與「自由玩樂」，在方法/工具/目標引入新奇與多樣性；<strong>改造任務本身</strong>而非表面積分遊戲化。<br>
+                  <span style="color:var(--amber-600); font-weight:700;">▸ 案例：葛蘭妮、快針護士、巴西籃球</span>
+                </div>
+              </div>
+              <div class="mck-card" style="padding:12px 14px;">
+                <div class="card-num">支柱 B ｜ 第 3 節：改變遊戲規則</div>
+                <div class="card-title" style="font-size:14.5px;">交錯練習 × 與過去自己競爭</div>
+                <div class="card-text" style="font-size:12.5px;">
+                  拒絕「先樂後苦」對比陷阱，把枯燥體能揉進核心遊戲；<strong>每隔 20 分鐘交錯切換挑戰（Interleaving）</strong>，同時突破目標分數與時間。<br>
+                  <span style="color:var(--amber-600); font-weight:700;">▸ 案例：棉花糖測試、柯瑞 21 分遊戲</span>
+                </div>
+              </div>
+              <div class="mck-card highlight" style="padding:12px 14px;">
+                <div class="card-num">支柱 C ｜ 第 4 節：讓我休息一下</div>
+                <div class="card-title" style="font-size:14.5px;">定時主動休息 × 間歇重複</div>
+                <div class="card-text" style="font-size:12.5px;">
+                  即使刻意玩樂也不該耗盡整天！油箱半滿即休息，單次不超過 20 分鐘，達成<strong>維持熱情、孵化創意、鞏固記憶（+10~30%）</strong>。<br>
+                  <span style="color:var(--amber-600); font-weight:700;">▸ 案例：馬友友、米蘭達、小提琴女孩</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">架構總結</span>
+          <span>三大鷹架環環相扣：「刻意玩樂」點燃內在動機 →「交錯與改規則」攻克枯燥基本功 →「定時休息」防止熱情耗竭，形成永續成長閉環。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 全章邏輯骨架圖</span>
+        <span>Source: Adam Grant, Hidden Potential, Ch.4 (p.146–174)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3: 逐節重點 1 - 開場案例：依芙琳・葛蘭妮
+         ========================================== -->
+    <section class="slide-canvas" data-slide="3">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">3. 逐章（節）重點 ① ｜ 開場案例：失聰打擊樂女王（p.146–p.150）</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          依芙琳・葛蘭妮從 12 歲全聾、遭音樂學院拒絕到登頂全球，關鍵在於老師搭建的「<span class="accent">感官玩樂鷹架</span>」
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="thesis-bar">
+          <span class="thesis-label">本節核心論點</span>
+          <span>當傳統枯燥的音階苦練完全行不通時，透過改變感知路徑並將練習設計成「電玩升級般的挑戰」，能把身體限制轉化為無可取代的藝術優勢。</span>
+        </div>
+
+        <div class="grid-3">
+          <!-- Highlight 1 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 01 ｜ 反直覺逆襲數據</div>
+              <div class="card-title" style="margin-top:4px;">從「毫無希望」到全球首位全職獨奏打擊樂家</div>
+              <div class="card-kpi">100 場 / 年 ＋ 3 座葛萊美</div>
+              <div class="card-kpi-sub">2015 年獲頒「音樂界諾貝爾獎」極地音樂獎</div>
+            </div>
+            <div class="card-text">
+              葛蘭妮 8 歲起聽力衰退、<strong>12 歲因神經退化完全失聰</strong>。首次報考倫敦皇家音樂學院時，演奏定音鼓《威廉・泰爾序曲》、木琴與莫札特奏鳴曲，卻被評審斷言「毫無希望成為職業音樂家」。然而<strong>不到 10 年後</strong>，她每年在全球舉辦 100 場售罄音樂會並獲封女爵士（p.146–148）。
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 02 ｜ 獨特訓練方法</div>
+              <div class="card-title" style="margin-top:4px;">把身體變成「一隻巨大的耳朵」：牆壁與赤腳練習</div>
+            </div>
+            <!-- Simple Visual Diagram of Body Resonance -->
+            <div style="background:var(--white); border:1px solid var(--gray-200); padding:10px 12px; font-size:12.5px;">
+              <div style="display:flex; justify-content:space-between; border-bottom:1px dashed var(--gray-300); padding-bottom:6px; margin-bottom:6px;">
+                <strong style="color:var(--navy-950);">🎵 高音頻震動</strong>
+                <span style="color:var(--amber-600); font-weight:700;">對應：臉部、顴骨、頭皮、頸部</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <strong style="color:var(--navy-950);">🥁 低音頻震動</strong>
+                <span style="color:var(--navy-700); font-weight:700;">對應：腹部、腿部、赤腳腳掌</span>
+              </div>
+            </div>
+            <div class="card-text">
+              學校打擊樂老師<strong>羅恩・福布斯（Ron Forbes）</strong>不逼她練枯燥音階，而是讓她把手貼在牆上感受定音鼓震動，並開始<strong>赤腳練習</strong>，透過手腕、手臂、顴骨與腳底的共振分辨音高（p.148–149）。
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="mck-card highlight">
+            <div>
+              <div class="card-num">亮點 03 ｜ 鷹架式挑戰設計</div>
+              <div class="card-title" style="margin-top:4px;">像在電玩遊戲裡升級：用小鼓挑戰演奏巴哈</div>
+              <div class="card-kpi" style="font-size:22px; margin:8px 0;">「玩樂與努力之間從來沒有區別，我就像海綿一樣。」</div>
+            </div>
+            <div class="card-text">
+              羅恩在小鼓上<strong>不斷縮小音高之間的差距</strong>，讓她像電玩破關一樣學習用指尖分辨細微差異；並拋出新奇挑戰：「<strong>看到這首巴哈的曲子嗎？妳覺得可以用小鼓演奏嗎？</strong>」促使她開創出詮釋巴哈的當代鼓樂風格（p.149）。
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">一句話總結</span>
+          <span>在音樂中，「演奏」與「玩樂」同為 Play 並非巧合——釋放隱性潛能的最好方法不是忍受日常磨練，而是把磨練轉變成日常的快樂泉源（p.149–150）。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 開場案例：依芙琳・葛蘭妮（Evelyn Glennie）</span>
+        <span>Source: Hidden Potential, Ch.4 (p.146–150)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4: 逐節重點 2 - 進入和諧狀態
+         ========================================== -->
+    <section class="slide-canvas" data-slide="4">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">3. 逐章（節）重點 ② ｜ 第 1 節：進入和諧狀態（p.150–p.153, 155）</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          強迫式苦練會同時引爆「過勞與悶爆」；<span class="accent">127 項研究</span>證實唯有「和諧式熱情」能驅動長遠卓越
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="thesis-bar">
+          <span class="thesis-label">本節核心論點</span>
+          <span>「一萬小時定律」的單調刻意練習只適用於高度可預測的固定動作；頂尖專家並非靠虎爸虎媽強迫，而是靠「我想要學」的和諧式熱情進入心流。</span>
+        </div>
+
+        <div class="grid-2-asym">
+          <!-- Left: 3 Core Highlights -->
+          <div style="display:flex; flex-direction:column; gap:12px; justify-content:space-between;">
+            <div class="mck-card" style="padding:13px 16px;">
+              <div class="card-num">亮點 01 ｜ 破除莫札特神話與雙重耗竭（p.151）</div>
+              <div class="card-text">
+                莫札特童年受父親「毫無保留的奴役」（十幾歲寫道手指因寫太多宣敘調而疼痛，近 30 歲感嘆演出太多好累）——<strong>他成功不是「因為」強迫練習，而是「熬過了」強迫練習的折磨</strong>。強迫苦練會同時引發<strong>過勞（Burnout，過度工作情緒耗竭）</strong>與<strong>悶爆（Boreout，刺激不足與單調的情緒麻木）</strong>。
+              </div>
+            </div>
+
+            <div class="mck-card" style="padding:13px 16px;">
+              <div class="card-num">亮點 02 ｜ 國際音樂會鋼琴家的童年真相（Sosniak 研究，p.151–152）</div>
+              <div class="card-text">
+                心理學家勞倫・索斯尼亞克研究 40 歲以下世界級鋼琴家發現：他們幼時極少有強迫練習症候群，<strong>每天大多只練琴 1 小時</strong>，也沒有虎爸虎媽，而是因為「有興趣、喜歡跟老師一起學習」，青春期才主動增加練習時數。
+              </div>
+            </div>
+
+            <div class="mck-card highlight" style="padding:13px 16px;">
+              <div class="card-num">亮點 03 ｜ 127 項研究、逾 45,000 人後設分析（p.152 & 原注 47）</div>
+              <div class="card-text">
+                <strong>127 項研究（>4.5 萬人）</strong>證實：有熱情支撐，堅持才更能帶來卓越表現。原注 47（Rothbard 研究）更指出：長工時在「強迫症」驅使下會導致憂鬱、失眠、高血壓與高膽固醇；但在<strong>「和諧式熱情」</strong>驅使下則不會，且更易進入<strong>心流（Flow）</strong>。
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Visual Recreation of Liz Fosslien p.153 Illustration + Comparison Matrix -->
+          <div class="mck-card" style="background:var(--white); justify-content:space-between;">
+            <div>
+              <div class="card-num">原書 p.153 視覺重現（Liz Fosslien 插畫）</div>
+              <div class="card-title" style="margin-top:4px; margin-bottom:12px;">兩種通往 100% 目標的心理路徑對比</div>
+
+              <!-- SVG Diagram recreating p.153 -->
+              <svg viewBox="0 0 420 210" style="width:100%; height:auto; background:var(--gray-50); border:1px solid var(--gray-200); padding:8px;">
+                <!-- Top Bar: 我必須 -->
+                <text x="16" y="28" font-size="13" font-weight="700" fill="#0F172A">「我必須」（強迫式壓力：沉重直線苦行）</text>
+                <rect x="16" y="38" width="340" height="18" rx="9" fill="#E2E8F0" stroke="#475569" stroke-width="1.5"/>
+                <rect x="16" y="38" width="140" height="18" rx="9" fill="#64748B"/>
+                <text x="366" y="52" font-size="13" font-weight="700" fill="#334155">100%</text>
+                <!-- Straight trudging line -->
+                <line x1="26" y1="82" x2="346" y2="82" stroke="#64748B" stroke-width="2" stroke-dasharray="4 3"/>
+                <circle cx="150" cy="70" r="5" fill="#334155"/>
+                <text x="164" y="75" font-size="11" fill="#475569">過勞 (Burnout) ＋ 悶爆 (Boreout)</text>
+
+                <!-- Bottom Bar: 我想要 -->
+                <text x="16" y="122" font-size="13" font-weight="700" fill="#051C2C">「我想要」（和諧式熱情：享受過程的心流曲線）</text>
+                <rect x="16" y="132" width="340" height="18" rx="9" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+                <rect x="16" y="132" width="340" height="18" rx="9" fill="#D97706"/>
+                <text x="366" y="146" font-size="13" font-weight="800" fill="#D97706">100%</text>
+                <!-- Playful wavy path -->
+                <path d="M 26 185 Q 65 150, 105 182 T 185 175 T 265 178 T 346 168" fill="none" stroke="#D97706" stroke-width="3"/>
+                <circle cx="346" cy="168" r="6" fill="#051C2C"/>
+                <text x="115" y="202" font-size="11.5" font-weight="700" fill="#B45309">✨ 進入心流（Flow）：練習豐富生活而非主宰生活</text>
+              </svg>
+            </div>
+
+            <table class="mck-table" style="font-size:12px;">
+              <thead>
+                <tr>
+                  <th>維度</th>
+                  <th>強迫式熱情（Obsessive）</th>
+                  <th>和諧式熱情（Harmonious）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>內在對話</strong></td>
+                  <td>「我應該學／我必須練」</td>
+                  <td><strong>「我想要學／練習讓我興奮」</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>健康影響</strong></td>
+                  <td>憂鬱、失眠、高血壓、高膽固醇</td>
+                  <td><strong>身心健康、工作與生活衝突少</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">一句話總結</span>
+          <span>當練習由「我必須」的強迫症轉為「我想要」的和諧式熱情，堅持就不再是痛苦的意志力消耗，而是自然流淌的心流（p.152）。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 第 1 節：進入和諧狀態</span>
+        <span>Source: Hidden Potential, Ch.4 (p.150–153, p.155 fn.47)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: 逐節重點 3 - 樂在玩樂（上）
+         ========================================== -->
+    <section class="slide-canvas" data-slide="5">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">3. 逐章（節）重點 ③ ｜ 第 2 節：樂在玩樂（上）跨領域實證（p.154–p.156）</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          「刻意玩樂」融合結構化精進與自由玩樂，不僅降低醫療過勞，更讓業務銷售業績躍升 <span class="accent">43%</span>
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="thesis-bar">
+          <span class="thesis-label">本節核心論點</span>
+          <span>刻意玩樂（Deliberate Play）是在學習的方法、工具、目標和人員中引入「新奇性與多樣性」，拆解複雜任務並透過享受樂趣來精通特定技能。</span>
+        </div>
+
+        <div class="grid-3">
+          <!-- Highlight 1 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 01 ｜ 核心定義與自我鷹架</div>
+              <div class="card-title" style="margin-top:4px;">刻意練習 × 自由玩樂 ＝ 刻意玩樂</div>
+            </div>
+            <div style="background:var(--navy-950); color:var(--white); padding:12px; font-size:12.5px; line-height:1.55;">
+              <div style="color:var(--amber-500); font-weight:700; margin-bottom:4px;">刻意玩樂四大變化維度（p.154）：</div>
+              ① 學習<strong>方法</strong> ▸ ② 使用<strong>工具</strong><br>
+              ③ 挑戰<strong>目標</strong> ▸ ④ 互動<strong>人員</strong>
+            </div>
+            <div class="card-text">
+              葛蘭妮無聊時就<strong>切換不同打擊樂器</strong>，或將馬林巴琴融合爵士鼓（「一旦固定某種模式，就好像被綁在架子上」）。常人學鋼琴視譜可<strong>計算每週掌握音符數</strong>，或玩拼字遊戲計時<strong>一分鐘能拼出幾個單字</strong>（p.154, 156）。
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 02 ｜ 醫療現場減壓與同理心實驗</div>
+              <div class="card-title" style="margin-top:4px;">「快針護士」計時賽 ＆ 醫學院「外國電影」即興劇</div>
+            </div>
+            <div class="card-text">
+              <strong>▸ 快針護士（Speedy Nurse）：</strong>作者團隊在醫療業實驗注入刻意玩樂以減少過勞。一位護士讓打針的孩子幫她計時，看能否<strong>打破她上次打針的最快紀錄</strong>——孩子立刻放鬆，下次看診還指定找她（p.155）。<br><br>
+              <strong>▸ 醫學院「外國電影」即興練習：</strong>一名學生大喊胡言亂語，搭檔負責解讀手勢與臉部表情，顯著提升了醫師<strong>辨識病患主要症狀與同理心</strong>的能力（p.156）。
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="mck-card highlight">
+            <div>
+              <div class="card-num">亮點 03 ｜ 業務培訓隨機對照實驗</div>
+              <div class="card-title" style="margin-top:4px;">「盒子裡有什麼」3 分鐘冷淡顧客角色扮演</div>
+              <div class="card-kpi">+43% 門票銷量</div>
+              <div class="card-kpi-sub">次月推銷職棒門票實測表現（p.156）</div>
+            </div>
+            <div class="card-text">
+              在銷售培訓課中，顧客抱著一個盒子且態度冷淡，業務員必須不斷詢問盒子裡裝什麼，目標是<strong>維持 3 分鐘不間斷的對話</strong>。結果不僅學員更喜歡這門課，次月推銷職業棒球賽門票時，<strong>角色扮演組比對照組多賣出 43% 的門票</strong>！
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">一句話總結</span>
+          <span>把高壓或枯燥的技能拆解為「限時破紀錄、即興解讀、3分鐘不間斷提問」等結構化遊戲，能同時消除職業倦怠並創造卓越績效（p.154–156）。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 第 2 節：樂在玩樂（上）</span>
+        <span>Source: Hidden Potential, Ch.4 (p.154–156)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6: 逐節重點 4 - 樂在玩樂（下）巴西籃球與遊戲化區別
+         ========================================== -->
+    <section class="slide-canvas" data-slide="6">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">3. 逐章（節）重點 ④ ｜ 第 2 節：樂在玩樂（下）體育實驗與遊戲化迷思（p.157–p.159）</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          巴西籃球實驗證實 <span class="accent">75% 刻意玩樂</span>能顯著提升創造力；表面「遊戲化」則無法拯救監獄跑步機式的苦差事
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="thesis-bar">
+          <span class="thesis-label">本節核心論點</span>
+          <span>過早單一化高強度訓練會導致選手提早見頂並倦怠；真正的刻意玩樂是「重新設計任務本身」，而非在無聊任務外貼上積分排行榜（遊戲化）。</span>
+        </div>
+
+        <div class="grid-3">
+          <!-- Highlight 1: Brazilian Basketball Experiment -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 01 ｜ 巴西青少年籃球實驗（p.157–158）</div>
+              <div class="card-title" style="margin-top:4px;">75% 變體規則遊戲 vs. 50% 基本功重複訓練</div>
+            </div>
+            <div style="background:var(--white); border:1px solid var(--gray-200); padding:10px 12px; font-size:12.5px;">
+              <div style="margin-bottom:8px;">
+                <strong style="color:var(--gray-600);">❌ 刻意練習組（>50% 時間基本功＋教練回饋）</strong><br>
+                <span style="color:var(--gray-500);">數月後測試跑空檔與傳球創造力：<strong>毫無進步</strong></span>
+              </div>
+              <div style="border-top:1px solid var(--gray-200); padding-top:8px;">
+                <strong style="color:var(--amber-600);">✅ 刻意玩樂組（~75% 時間教練設計變體遊戲）</strong><br>
+                <span style="color:var(--navy-950); font-weight:600;">如搭檔只能傳球不能投籃、1打2或3打4：<strong>籃球智商與創造力顯著提升！</strong></span>
+              </div>
+            </div>
+            <div class="card-text">
+              限制性規則（如以少打多、禁止投籃）迫使球員在享受遊戲的同時動腦應變，養出死練基本功無法獲得的賽場創造力。
+            </div>
+          </div>
+
+          <!-- Highlight 2: p.158 Pie Chart -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 02 ｜ 原書 p.158 圓餅圖重現</div>
+              <div class="card-title" style="margin-top:4px;">「沒有玩樂的練習」帶來的五大反效果</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <svg viewBox="0 0 120 120" style="width:105px; height:105px; flex-shrink:0;">
+                <circle cx="60" cy="60" r="52" fill="#051C2C"/>
+                <!-- Segments approximating p.158 pie chart -->
+                <path d="M60,60 L60,8 A52,52 0 0,1 108,80 Z" fill="#112E46" stroke="#fff" stroke-width="1.5"/>
+                <path d="M60,60 L108,80 A52,52 0 0,1 35,106 Z" fill="#1B4160" stroke="#fff" stroke-width="1.5"/>
+                <path d="M60,60 L35,106 A52,52 0 0,1 10,45 Z" fill="#475569" stroke="#fff" stroke-width="1.5"/>
+                <path d="M60,60 L10,45 A52,52 0 0,1 35,14 Z" fill="#94A3B8" stroke="#fff" stroke-width="1.5"/>
+                <path d="M60,60 L35,14 A52,52 0 0,1 60,8 Z" fill="#D97706" stroke="#fff" stroke-width="1.5"/>
+              </svg>
+              <ol style="font-size:12px; color:var(--gray-700); line-height:1.55; padding-left:16px;">
+                <li><strong>暗暗痛恨教練</strong>（佔比最大）</li>
+                <li><strong>偽裝受傷</strong>以逃避下次練習</li>
+                <li><strong>破壞器具</strong>，讓任何人都無法做下次訓練</li>
+                <li><strong>躲在洗手間</strong></li>
+                <li style="color:var(--amber-600); font-weight:700;">同時感到過勞及悶爆</li>
+              </ol>
+            </div>
+            <div class="card-text" style="font-size:12.5px;">
+              抽離玩樂的高壓訓練，表面上看似紀律嚴明，實則誘發學員消極怠工、逃避與雙重耗竭。
+            </div>
+          </div>
+
+          <!-- Highlight 3: Deliberate Play vs Gamification -->
+          <div class="mck-card highlight">
+            <div>
+              <div class="card-num">亮點 03 ｜ 刻意玩樂 vs. 遊戲化（p.159 & 原注 49）</div>
+              <div class="card-title" style="margin-top:4px;">跑步機原是 19 世紀英國監獄刑具！</div>
+            </div>
+            <div class="card-text">
+              <strong>▸ 跑步機的暗黑歷史（原注 49）：</strong>跑步機最初是 19 世紀初英國監獄發明的懲罰工具，囚犯每天踩巨輪 6 小時。獄卒寫道：令囚犯恐懼的不是「殘酷的刑罰」，而是<strong>「單調的穩定性」</strong>。<br><br>
+              <strong>▸ 關鍵區分：</strong><strong>遊戲化（Gamification）</strong>只是在無聊任務外加上排行榜或積分換取短暫多巴胺，無法讓你愛上討厭的活動；<strong>刻意玩樂則是重新設計任務本身</strong>，使其兼具激勵性與發展性。
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">一句話總結</span>
+          <span>別在「監獄跑步機」上貼積分貼紙（表面遊戲化），而是像巴西籃球教練一樣修改上場規則（刻意玩樂），讓訓練本身就充滿挑戰與樂趣（p.157–159）。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 第 2 節：樂在玩樂（下）</span>
+        <span>Source: Hidden Potential, Ch.4 (p.157–159, fn.49)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7: 逐節重點 5 - 改變遊戲規則（電話簿實驗與棉花糖測試）
+         ========================================== -->
+    <section class="slide-canvas" data-slide="7">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">3. 逐章（節）重點 ⑤ ｜ 第 3 節：改變遊戲規則（p.160–p.164）</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          電話簿實驗揭露「<span class="accent">先樂後苦</span>」反而增加失誤；棉花糖測試真正考驗的不是意志力而是「玩樂鷹架」
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="thesis-bar">
+          <span class="thesis-label">本節核心論點</span>
+          <span>把有趣活動與枯燥訓練分開交替，會因「強烈對比」讓無聊任務更難熬；最自律的人最不需要動用意志力，因為他們把抗拒直接改造成了遊戲。</span>
+        </div>
+
+        <div class="grid-3">
+          <!-- Highlight 1 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 01 ｜ 為什麼不能「先樂後苦」？（p.161）</div>
+              <div class="card-title" style="margin-top:4px;">南韓銷售員研究 ＆ 抄寫電話簿隨機實驗</div>
+            </div>
+            <div style="background:var(--white); border:1px solid var(--gray-200); padding:10px 12px; font-size:12.5px;">
+              <strong style="color:var(--navy-950);">📞 申智海 & 格蘭特「抄寫電話簿實驗」：</strong>
+              <ul style="padding-left:16px; margin-top:4px; color:var(--gray-700); line-height:1.5;">
+                <li><strong>A 組：</strong>直接抄寫電話簿上的姓名與電話號碼</li>
+                <li><strong>B 組：</strong>先看搞笑 YouTube 影片，再抄寫電話簿</li>
+                <li style="color:var(--amber-600); font-weight:700;">結果：B 組犯了更多錯誤！因為強烈對比讓抄寫顯得更無聊。</li>
+              </ul>
+            </div>
+            <div class="card-text">
+              對南韓零售業務員的研究也顯示：<strong>越熱愛自己喜愛任務的人，在討厭任務上表現越差</strong>。因此絕不能只把有趣與無聊任務交替進行。
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="mck-card highlight">
+            <div>
+              <div class="card-num">亮點 02 ｜ 顛覆自律迷思（p.163–164 & 原注 50）</div>
+              <div class="card-title" style="margin-top:4px;">棉花糖測試的真相：把等待變成「刻意玩樂」</div>
+            </div>
+            <div class="card-text">
+              心理學家<strong>安傑拉・達克沃斯（Angela Duckworth）</strong>發現：<strong>「最自律的人其實最不需要動用意志力」</strong>，他們會主動改變情境，讓事情沒那麼難。<br><br>
+              重看經典<strong>棉花糖測試</strong>影片發現，成功等待第二顆棉花糖的 4 歲孩子並非苦苦硬撐，而是自建<strong>刻意玩樂鷹架</strong>：遮住眼睛、坐在手上，或<strong>把棉花糖揉成球當玩具彈跳</strong>！（註 50：等待也反映穩定環境的社會支持與信任）。
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 03 ｜ 教練佩恩的痛點轉化（p.160–162）</div>
+              <div class="card-title" style="margin-top:4px;">從痛恨體能訓練的射手，到改造規則的教練</div>
+            </div>
+            <div class="card-text">
+              籃球教練之子<strong>布蘭登・佩恩（Brandon Payne）</strong>大學時是神射手，卻因痛恨衝刺、伸展與體能訓練，缺乏橫向速度與爆發力而斷送球員生涯。<br><br>
+              當他成為教練後，發現球員同樣痛恨全場折返跑與單調步法訓練。他意識到：<strong>必須把和諧式熱情融入練習的「每一個元素」</strong>——將體能訓練直接藏進球員最愛的投籃遊戲裡。
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">一句話總結</span>
+          <span>別靠看搞笑影片來補償枯燥訓練（那只會製造對比痛苦），也別靠意志力死撐；把枯燥基本功直接揉進核心挑戰，才是自律的最高境界（p.161–164）。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 第 3 節：在練習中玩樂／改變遊戲規則</span>
+        <span>Source: Hidden Potential, Ch.4 (p.160–165, fn.50)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: 逐節重點 6 - 對練習的熱愛（柯瑞 21分遊戲與交錯練習）
+         ========================================== -->
+    <section class="slide-canvas" data-slide="8">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">3. 逐章（節）重點 ⑥ ｜ 第 3 節：對練習的熱愛——史蒂芬・柯瑞（p.162–p.167）</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          柯瑞靠「21分遊戲」與每 20 分鐘「<span class="accent">交錯練習</span>」僅 789 場破紀錄；常人跟練 50 天命中率從 <span class="accent">8% 飆至 40%</span>
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="thesis-bar">
+          <span class="thesis-label">本節核心論點</span>
+          <span>透過限時結合體能的「21分遊戲」與過去的自己競爭，並每隔 20 分鐘交錯切換不同技能（Interleaving），能創造類比賽專注力並加速學習。</span>
+        </div>
+
+        <div class="grid-3">
+          <!-- Highlight 1 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 01 ｜ 21分遊戲（Game of 21，p.164–165）</div>
+              <div class="card-title" style="margin-top:4px;">把折返跑揉進投籃，只跟「過去的自己」比賽</div>
+            </div>
+            <div style="background:var(--navy-950); color:var(--white); padding:10px 14px; font-size:12.5px; line-height:1.5;">
+              <strong style="color:var(--amber-500);">🏀「21分遊戲」三大規則：</strong><br>
+              1. 限時 <strong>1 分鐘內</strong>結合三分球、跳投、上籃（1分）拿滿 <strong>21 分</strong><br>
+              2. <strong>每次出手後必須衝刺到半場再折返</strong>（模擬真實比賽疲勞）<br>
+              3. 必須同時打破過去自己的<strong>「目標分數」與「目標時間」</strong>
+            </div>
+            <div class="card-text">
+              跟別人比賽有缺陷（對手狀況差時，你就算沒進步也能贏）。跟過去的自己比，目標不是追求完美，而是變得更好。
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 02 ｜ 交錯練習（Interleaving，p.166）</div>
+              <div class="card-title" style="margin-top:4px;">每隔 20 分鐘換一種挑戰，數百項實驗證實更有效</div>
+            </div>
+            <div class="card-text">
+              一般人以為應「重複練一種技能直到進步才換下一種」；但佩恩讓柯瑞<strong>每隔 20 分鐘就換一種投籃與敏捷訓練</strong>。<br><br>
+              <strong>數百項實驗</strong>顯示，在不同技能間切換的<strong>交錯（Interleaving）</strong>適用於從繪畫到數學等多元領域（甚至切換不同粗細畫筆或微調籃球重量都有大影響）。球星<strong>盧卡・唐西奇（Luka Dončić）</strong>跟練後也成功減重並提升速度。
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="mck-card highlight">
+            <div>
+              <div class="card-num">亮點 03 ｜ 驚人實證數據（p.162, 167）</div>
+              <div class="card-title" style="margin-top:4px;">789 場破 NBA 紀錄 ＆ YouTuber 50 天暴增 5 倍</div>
+            </div>
+            <!-- SVG Mini Bar Comparison -->
+            <div style="background:var(--white); border:1px solid var(--gray-200); padding:10px 12px; font-size:12px;">
+              <div style="margin-bottom:8px;">
+                <div style="display:flex; justify-content:space-between; font-weight:700;">
+                  <span>NBA 生涯三分球破紀錄場次</span>
+                  <span style="color:var(--amber-600);">789 場 vs. >1,300 場</span>
+                </div>
+                <div style="background:var(--gray-200); height:8px; margin-top:3px; position:relative;">
+                  <div style="background:var(--amber-600); width:60%; height:100%;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex; justify-content:space-between; font-weight:700;">
+                  <span>YouTuber 每日跟練 2 小時（50天）</span>
+                  <span style="color:var(--amber-600);">命中率 8% ➔ 40%（5倍）</span>
+                </div>
+                <div style="background:var(--gray-200); height:8px; margin-top:3px; position:relative;">
+                  <div style="background:var(--navy-950); width:80%; height:100%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-text">
+              柯瑞彌補了身高 188 公分、體重 84 公斤的體能劣勢。總教練<strong>史蒂夫・科爾（Steve Kerr）</strong>：「他很喜歡那個過程，那是所有卓越運動員的共通點。」
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">一句話總結</span>
+          <span>刻意玩樂未必讓你成為職業運動員，但透過「限時自我挑戰＋每 20 分鐘交錯切換」，能創造帶壓力的類比賽情境，讓你進步得更快（p.166–167）。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 第 3 節：對練習的熱愛（Brandon Payne & Stephen Curry）</span>
+        <span>Source: Hidden Potential, Ch.4 (p.162–167)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: 逐節重點 7 - 讓我休息一下（上）三大休息好處與圖表
+         ========================================== -->
+    <section class="slide-canvas" data-slide="9">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">3. 逐章（節）重點 ⑦ ｜ 第 4 節：讓我休息一下（上）科學實證（p.168–p.172）</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          別等油箱見底才熄火：主動定時休息具備「維持熱情、孵化創意、提升 <span class="accent">10%–30% 記憶力</span>」三大效益
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="thesis-bar">
+          <span class="thesis-label">本節核心論點</span>
+          <span>強迫症讓我們把休息視為偷懶、直到精疲力竭才罷休；抱持和諧式熱情的人則懂得在「想要休息時」主動補充燃料，收穫三大科學效益。</span>
+        </div>
+
+        <div class="grid-2-asym">
+          <!-- Left: 3 Scientific Benefits of Rest -->
+          <div style="display:flex; flex-direction:column; gap:11px; justify-content:space-between;">
+            <div class="mck-card" style="padding:12px 16px;">
+              <div class="card-num">效益 01 ｜ 維持和諧式熱情（減少疲勞、提振精力，p.170）</div>
+              <div class="card-text">
+                短短休息 <strong>5 到 10 分鐘</strong>就足以減少疲勞；夜間與週末不休會降低內在動力（光是提醒自己「今天是週六」去放鬆就能保護動力）。大提琴家<strong>馬友友</strong>每天練習 <strong>3 到 6 小時</strong>且刻意避開清晨與深夜；<strong>蕭邦</strong>更力勸學生<strong>夏天每天練琴不超過 2 小時</strong>。
+              </div>
+            </div>
+
+            <div class="mck-card" style="padding:12px 16px;">
+              <div class="card-num">效益 02 ｜ 激發新點子（背景醞釀創意，p.170–171 & 原注 51）</div>
+              <div class="card-text">
+                作者與申智海研究發現，對任務有和諧式熱情時，休息能讓人從新角度思索並找到意想不到的解法。<strong>林-曼努爾・米蘭達（Lin-Manuel Miranda）</strong>正是在度假坐在泳池浮床上、手拿瑪格麗塔酒做白日夢時，想到百老匯神作<strong>《漢密爾頓》（Hamilton）</strong>的點子！<strong>貝多芬、柴可夫斯基、馬勒</strong>散步時間與工作時間幾乎一樣長也是為此。
+              </div>
+            </div>
+
+            <div class="mck-card highlight" style="padding:12px 16px;">
+              <div class="card-num">效益 03 ｜ 加深學習與記憶（對抗遺忘曲線，p.171）</div>
+              <div class="card-text">
+                實驗顯示，學習完某樣東西後<strong>休息 10 分鐘，學生記憶力提升了 10% 到 30%</strong>（中風與阿茲海默症患者幅度更高）。過了約 24 小時資訊會沿<strong>遺忘曲線</strong>下降，透過<strong>間歇性重複練習</strong>（穿插休息，從每小時練一次拉長到每天練一次）能有效鎖住記憶。
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Recreating p.168 Matchsticks & p.172 Fuel Gauges -->
+          <div style="display:flex; flex-direction:column; gap:12px; justify-content:space-between;">
+            <!-- p.168 Matchsticks -->
+            <div class="mck-card" style="background:var(--white); padding:14px;">
+              <div class="card-num">原書 p.168 插畫重現（M. Shandell）</div>
+              <div class="card-title" style="font-size:14.5px; margin-bottom:8px;">「你何時可以休息⋯⋯」三種環境對比</div>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; text-align:center; font-size:12px;">
+                <div style="background:var(--gray-100); padding:10px 6px; border-top:3px solid var(--gray-700);">
+                  <div style="font-size:20px;">🥀</div>
+                  <strong style="color:var(--gray-900);">累斃時</strong><br>
+                  <span style="color:var(--gray-600);">有毒的環境<br>（火柴燒焦折斷）</span>
+                </div>
+                <div style="background:var(--gray-100); padding:10px 6px; border-top:3px solid var(--navy-700);">
+                  <div style="font-size:20px;">🕯️</div>
+                  <strong style="color:var(--navy-950);">需要休息時</strong><br>
+                  <span style="color:var(--gray-600);">正常的環境<br>（火柴頂端燒黑）</span>
+                </div>
+                <div style="background:var(--amber-50); padding:10px 6px; border-top:3px solid var(--amber-600);">
+                  <div style="font-size:20px;">🔥</div>
+                  <strong style="color:var(--amber-600);">想要休息時</strong><br>
+                  <span style="color:var(--gray-700); font-weight:600;">蓬勃的環境<br>（火苗旺盛完好）</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- p.172 Fuel Gauges -->
+            <div class="mck-card" style="background:var(--white); padding:14px;">
+              <div class="card-num">原書 p.172 插畫重現（Liz Fosslien）</div>
+              <div class="card-title" style="font-size:14.5px; margin-bottom:8px;">油箱指針：我們該休息 vs. 真正休息的時候</div>
+              <svg viewBox="0 0 380 115" style="width:100%; height:auto; background:var(--gray-50); border:1px solid var(--gray-200);">
+                <!-- Left Gauge: 我們該休息的時候 -->
+                <text x="95" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="#051C2C">我們該休息的時候（近半滿）</text>
+                <circle cx="95" cy="70" r="38" fill="#E2E8F0" stroke="#051C2C" stroke-width="2"/>
+                <text x="68" y="75" font-size="10" font-weight="700" fill="#051C2C">F</text>
+                <text x="118" y="75" font-size="10" font-weight="700" fill="#D97706">E</text>
+                <!-- Needle near half/slightly below half -->
+                <line x1="95" y1="70" x2="104" y2="42" stroke="#051C2C" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="95" cy="70" r="4" fill="#051C2C"/>
+
+                <!-- Right Gauge: 我們真正休息的時候 -->
+                <text x="285" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="#D97706">我們真正休息的時候（見底破表）</text>
+                <circle cx="285" cy="70" r="38" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+                <text x="258" y="75" font-size="10" font-weight="700" fill="#051C2C">F</text>
+                <text x="308" y="75" font-size="10" font-weight="700" fill="#D97706">E</text>
+                <!-- Needle way past E -->
+                <line x1="285" y1="70" x2="316" y2="86" stroke="#D97706" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="285" cy="70" r="4" fill="#D97706"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">一句話總結</span>
+          <span>放鬆不是浪費時間，而是對健康的投資；休息不是干擾，而是重新集中注意力、醞釀想法與鞏固記憶的關鍵機制（p.171–173）。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 第 4 節：讓我休息一下（上）</span>
+        <span>Source: Hidden Potential, Ch.4 (p.168–173, fn.51)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 10: 逐節重點 8 - 讓我休息一下（下）葛蘭妮奧運與收尾案例
+         ========================================== -->
+    <section class="slide-canvas" data-slide="10">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">3. 逐章（節）重點 ⑧ ｜ 第 4 節：讓我休息一下（下）重質不重量（p.167, 169–170, 173–174）</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          葛蘭妮以「<span class="accent">單次不超過 20 分鐘</span>」與即興挑戰證明：沒有樂在其中，潛能依舊隱於無形
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="thesis-bar">
+          <span class="thesis-label">本節核心論點</span>
+          <span>即使是刻意玩樂也不該投入每一個整天；當失去興趣或注意力時立刻停下休息，把焦點從「他人評判的結果」轉回「自己是否樂在其中」。</span>
+        </div>
+
+        <div class="grid-3">
+          <!-- Highlight 1 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 01 ｜ 制度變革與奧運巔峰（p.169）</div>
+              <div class="card-title" style="margin-top:4px;">改變全英國入學審查規則 ＆ 倫敦奧運率領千名鼓手</div>
+            </div>
+            <div class="card-text">
+              葛蘭妮十幾歲第二次去皇家音樂學院面試時，要求評審聚焦於表演能力而非身體缺陷——<strong>學院不僅錄取她，更改變了全英國的入學審查規則</strong>（改以音樂技能而非身體能力評估申請者）。<br><br>
+              <strong>2012 年倫敦奧運開幕式</strong>上，她率領 <strong>1,000 名鼓手</strong>將氣氛推向高潮，並用四個錘子演奏她參與設計的蘑菇狀鐘型樂器「<strong>依芙琳音樂會馬林巴鋁琴（Glennie Concert Aluphone）</strong>」。
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="mck-card">
+            <div>
+              <div class="card-num">亮點 02 ｜ 過度練習的教訓（p.167, 170, 173）</div>
+              <div class="card-title" style="margin-top:4px;">單次很少超過 20 分鐘：「重質，不重量」</div>
+            </div>
+            <div style="background:var(--navy-50); border-left:3px solid var(--navy-950); padding:10px 12px; font-size:12.5px; color:var(--navy-950); font-weight:600;">
+              「有進步，才是值得的練習。重質，不重量。你需要感覺到變化——也就是當你走出房間時，感覺有所不同。」
+            </div>
+            <div class="card-text">
+              剛進音樂學院時她曾因同儕壓力陷入強迫症（提早一小時起床練到晚上），反而扼殺創意與進步。如今她<strong>獨自練習很少超過 20 分鐘</strong>就會休息（盯著牆壁、寫筆記或讀好書），失去注意力就完全停止。
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="mck-card highlight">
+            <div>
+              <div class="card-num">亮點 03 ｜ 收尾案例：拯救倦怠琴童（p.173–174）</div>
+              <div class="card-title" style="margin-top:4px;">三個即興刻意玩樂挑戰，重燃小提琴女孩熱情</div>
+            </div>
+            <div class="card-text">
+              一位女孩在經歷連串音樂考試後對小提琴失去興趣，母親請葛蘭妮打氣。葛蘭妮沒有口頭說教，而是即興設計三個挑戰：<br>
+              <strong>① 反向演奏曲子</strong><br>
+              <strong>② 發明 10 種非傳統的小提琴演奏方法</strong><br>
+              <strong>③ 把最喜歡的電視節目與最愛動物的聲音融入音樂中</strong><br>
+              女孩最後笑盈盈地結束了課程！
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">全章收尾金句</span>
+          <span>「她以前的練習是把焦點放在『他人評判的結果』上，而刻意玩樂讓她明白，『真正重要的結果是自己是否樂在其中』。沒有樂在其中，潛能依舊隱於無形。」（p.174）</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 第 4 節：讓我休息一下（下）</span>
+        <span>Source: Hidden Potential, Ch.4 (p.167, 169–170, 173–174)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 11: 章節脈絡 (Logical Progression)
+         ========================================== -->
+    <section class="slide-canvas" data-slide="11">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">4. 章節脈絡 ｜ 全章論證邏輯串連（前一節結論如何成為下一節前提）</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          全章透過五階因果論證鏈，從「打破苦練迷思」層層推導出「<span class="accent">玩樂 × 交錯 × 休息</span>」的完整動力閉環
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="chain-container">
+          <!-- Step 1 -->
+          <div class="chain-step">
+            <div>
+              <div class="card-num">STAGE 01 ｜ 開場破題</div>
+              <div class="card-title" style="font-size:15px; margin:6px 0;">葛蘭妮感官逆襲</div>
+              <div class="card-text" style="font-size:12.5px;">
+                <strong>【本節結論】</strong><br>
+                12 歲全聾的葛蘭妮不靠枯燥音階，而是靠赤腳感受震動與電玩式挑戰成為全球第一，證明<strong>把磨練變成快樂泉源才能釋放潛能</strong>。
+              </div>
+            </div>
+            <div style="background:var(--navy-100); padding:8px 10px; font-size:12px; color:var(--navy-950); margin-top:10px;">
+              <strong>➔ 導出下一節前提：</strong><br>
+              既然玩樂能登頂，為何傳統「一萬小時強迫苦練」反而常讓人失敗？
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="chain-step">
+            <div>
+              <div class="card-num">STAGE 02 ｜ 第 1 節</div>
+              <div class="card-title" style="font-size:15px; margin:6px 0;">進入和諧狀態</div>
+              <div class="card-text" style="font-size:12.5px;">
+                <strong>【本節結論】</strong><br>
+                強迫苦練會引發「過勞＋悶爆」；國際鋼琴家與 127 項研究證實，唯有<strong>「和諧式熱情（我想要學）」</strong>才能讓堅持帶來高績效。
+              </div>
+            </div>
+            <div style="background:var(--navy-100); padding:8px 10px; font-size:12px; color:var(--navy-950); margin-top:10px;">
+              <strong>➔ 導出下一節前提：</strong><br>
+              如果尚未產生熱情，該如何搭建鷹架，把和諧式熱情注入日常練習？
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="chain-step">
+            <div>
+              <div class="card-num">STAGE 03 ｜ 第 2 節</div>
+              <div class="card-title" style="font-size:15px; margin:6px 0;">樂在玩樂</div>
+              <div class="card-text" style="font-size:12.5px;">
+                <strong>【本節結論】</strong><br>
+                透過引入新奇與多樣性的<strong>「刻意玩樂」重新設計任務本身</strong>（而非表面積分遊戲化），能提升醫療、業務（+43%）與籃球創造力。
+              </div>
+            </div>
+            <div style="background:var(--navy-100); padding:8px 10px; font-size:12px; color:var(--navy-950); margin-top:10px;">
+              <strong>➔ 導出下一節前提：</strong><br>
+              面對天生極度枯燥的基本功（如體能折返跑），能否「先玩樂再苦練」？
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="chain-step">
+            <div>
+              <div class="card-num">STAGE 04 ｜ 第 3 節</div>
+              <div class="card-title" style="font-size:15px; margin:6px 0;">改變規則與交錯</div>
+              <div class="card-text" style="font-size:12.5px;">
+                <strong>【本節結論】</strong><br>
+                電話簿實驗證明「先樂後苦」因對比效應更糟！必須像柯瑞<strong>「21分遊戲」把體能揉進投籃，並每 20 分鐘交錯練習</strong>、跟過去自己比。
+              </div>
+            </div>
+            <div style="background:var(--navy-100); padding:8px 10px; font-size:12px; color:var(--navy-950); margin-top:10px;">
+              <strong>➔ 導出下一節前提：</strong><br>
+              當刻意玩樂讓人徹底愛上練習後，這股熱情能每天一整天無止境運轉嗎？
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="chain-step final">
+            <div>
+              <div class="card-num">STAGE 05 ｜ 第 4 節（閉環）</div>
+              <div class="card-title" style="font-size:15px; margin:6px 0;">讓我休息一下</div>
+              <div class="card-text" style="font-size:12.5px;">
+                <strong>【最終結論】</strong><br>
+                葛蘭妮親身教訓證實「即使刻意玩樂也不該投入每個整天」；必須搭配<strong>定時主動休息（單次≤20分鐘、學後休10分鐘）</strong>，才能永續釋放潛能。
+              </div>
+            </div>
+            <div style="background:var(--amber-600); color:var(--white); padding:8px 10px; font-size:12px; margin-top:10px;">
+              <strong>★ 全章論證完成：</strong><br>
+              心態（和諧熱情）× 方法（刻意玩樂＋交錯）× 節奏（主動休息）
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">脈絡洞察</span>
+          <span>格蘭特並非只喊「快樂學習」口號，而是步步拆解讀者心中的真實疑問（為何苦練無效→如何設計玩樂→如何處理枯燥基本功→如何避免過度投入）。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 全章論證邏輯串連圖</span>
+        <span>Source: Hidden Potential, Ch.4 (p.146–174)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 12: 總結與立即行動 (Summary & Action)
+         ========================================== -->
+    <section class="slide-canvas" data-slide="12">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">5. 總結與立即應用 ｜ 全章 5 大精華濃縮 ＆ 今日行動方案</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒</span>
+        </div>
+        <h2 class="action-title">
+          掌握改變日常磨練的五大黃金法則，並立即啟動「<span class="accent">20-20-10 刻意玩樂工作法</span>」
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2-asym">
+          <!-- Left: 5 Core Takeaways -->
+          <div class="mck-card" style="background:var(--white); justify-content:space-between;">
+            <div class="card-num">全書（本章）精華濃縮 5 大重點</div>
+            <table class="mck-table" style="font-size:12.8px;">
+              <tbody>
+                <tr>
+                  <td style="width:130px; font-weight:700; color:var(--navy-950);">① 心態轉向<br><span style="font-size:11px; color:var(--gray-500);">和諧式熱情</span></td>
+                  <td>用<strong>「我想要學」取代「我必須練」</strong>，避開強迫症帶來的過勞（Burnout）與悶爆（Boreout），讓練習豐富生活而非主宰生活（127項研究實證）。</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:var(--navy-950);">② 任務改造<br><span style="font-size:11px; color:var(--gray-500);">刻意玩樂＞遊戲化</span></td>
+                  <td>別在「監獄跑步機」上貼積分排行榜；在方法、工具、目標與人員引入<strong>新奇性與多樣性</strong>（如3分鐘提問、變體規則），重新設計任務本身。</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:var(--navy-950);">③ 消除落差<br><span style="font-size:11px; color:var(--gray-500);">拒絕先樂後苦</span></td>
+                  <td>搞笑影片配抄寫電話簿只會因「對比效應」增加失誤；仿效棉花糖孩童與柯瑞<strong>「21分遊戲」</strong>，把枯燥基本功直接揉進核心挑戰中。</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:var(--navy-950);">④ 節奏切換<br><span style="font-size:11px; color:var(--gray-500);">交錯練習＋自我比對</span></td>
+                  <td>打破單一技能死磕迷思，<strong>每隔 20 分鐘交錯切換挑戰（Interleaving）</strong>，並與「過去的自己」同時比目標分數與目標時間。</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:var(--navy-950);">⑤ 永續續航<br><span style="font-size:11px; color:var(--gray-500);">油箱半滿即休息</span></td>
+                  <td>單次練習<strong>不超過 20 分鐘</strong>，善用 5–10 分鐘微休息與學後 10 分鐘留白，同步收穫精力恢復、創意孵化（如《漢密爾頓》）與 <strong>10%–30% 記憶提升</strong>。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Right: One Immediate Action -->
+          <div class="mck-card highlight" style="justify-content:space-between; padding:22px;">
+            <div>
+              <div style="background:var(--amber-600); color:var(--white); display:inline-block; padding:3px 10px; font-size:11.5px; font-weight:700; letter-spacing:0.06em; margin-bottom:10px;">
+                🚀 讀完這本書後，可以立刻應用的一件事
+              </div>
+              <div class="card-title" style="font-size:19px; margin-bottom:12px;">
+                挑選今天最抗拒的一項日常差事，套用「20-20-10 刻意玩樂循環」
+              </div>
+
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <div style="background:var(--white); border-left:4px solid var(--navy-950); padding:10px 14px;">
+                  <strong style="color:var(--navy-950); font-size:13.5px;">STEP 1｜前 20 分鐘：自創「跟昨天自己比」的遊戲規則</strong>
+                  <p style="font-size:12.5px; color:var(--gray-700); margin-top:2px;">仿效柯瑞「21分遊戲」與快針護士，為任務設定限時雙指標（例如：「20 分鐘內完成 X 頁審閱＋找出 3 個關鍵問題」），把單調作業變成破紀錄挑戰。</p>
+                </div>
+
+                <div style="background:var(--white); border-left:4px solid var(--navy-700); padding:10px 14px;">
+                  <strong style="color:var(--navy-950); font-size:13.5px;">STEP 2｜次 20 分鐘：計時器一響，強制「交錯切換」</strong>
+                  <p style="font-size:12.5px; color:var(--gray-700); margin-top:2px;">仿效佩恩與葛蘭妮，滿 20 分鐘立刻切換到另一項不同性質的子任務或換一種工具（Interleaving），絕不單一重複死磕到底。</p>
+                </div>
+
+                <div style="background:var(--white); border-left:4px solid var(--amber-600); padding:10px 14px;">
+                  <strong style="color:var(--amber-600); font-size:13.5px;">STEP 3｜後 10 分鐘：離開螢幕主動放空充電</strong>
+                  <p style="font-size:12.5px; color:var(--gray-700); margin-top:2px;">散步或閉目放空 10 分鐘（不滑手機），鎖住 10%–30% 記憶增益並讓大腦背景孵化新點子；檢視走出房間時是否「感覺有所不同」。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">行動準則</span>
+          <span>不要等「有心情」才開始玩樂，而是透過改變當下這 20 分鐘的規則與節奏，主動為日常磨練注入和諧式熱情。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 全章總結與立即行動方案</span>
+        <span>Source: Hidden Potential, Ch.4 (p.146–174)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 13: 附錄一 (Empirical Evidence Matrix)
+         ========================================== -->
+    <section class="slide-canvas" data-slide="13">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">6. 附錄（一）｜ 全章 8 大實證研究、科學實驗與數據總表</span>
+          <span class="eyebrow-pace">閱讀節奏：40 秒 ｜ 延伸查考</span>
+        </div>
+        <h2 class="action-title">
+          本章所有論點皆有嚴謹的心理學實驗與跨領域數據支撐，可作為團隊培訓與自我管理之科學依據
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <table class="mck-table" style="font-size:12.5px;">
+          <thead>
+            <tr>
+              <th style="width:65px;">書頁</th>
+              <th style="width:210px;">研究／實驗／案例名稱</th>
+              <th style="width:170px;">關鍵數據／實驗設計</th>
+              <th>核心發現與管理啟示</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>p.151–152</strong></td>
+              <td><strong>國際音樂會鋼琴家童年研究</strong><br>（Lauren Sosniak）</td>
+              <td><span class="kpi-pill">幼時每日僅練 1 小時</span></td>
+              <td>40 歲以下世界級鋼琴家幼時極少有強迫練習症候群，也無虎爸虎媽；因內在興趣與喜歡老師，青春期才主動增加練習時數。</td>
+            </tr>
+            <tr>
+              <td><strong>p.152</strong></td>
+              <td><strong>熱情與績效後設分析</strong><br>（Meta-analysis）</td>
+              <td><span class="kpi-pill">127 項研究 / >45,000 人</span></td>
+              <td>證實唯有在「熱情」支撐下，堅持到底才更有可能轉化為卓越表現；和諧式熱情讓人輕鬆進入心流（Flow）。</td>
+            </tr>
+            <tr>
+              <td><strong>p.155–156</strong></td>
+              <td><strong>醫療減壓與醫學院即興劇實驗</strong><br>（作者團隊 & 醫學院）</td>
+              <td><span class="kpi-pill">快針護士 ＋ 外國電影</span></td>
+              <td>護士讓孩童計時挑戰最快打針紀錄，消除恐懼與過勞；醫學生玩「胡言亂語＋解讀表情手勢」即興劇，顯著提升症狀辨識與同理心。</td>
+            </tr>
+            <tr>
+              <td><strong>p.156</strong></td>
+              <td><strong>業務培訓「盒子角色扮演」實驗</strong><br>（推銷職棒門票）</td>
+              <td><span class="kpi-pill">門票銷量 +43%</span></td>
+              <td>向冷淡顧客提問「盒子裡有什麼」並維持 3 分鐘不間斷對話；角色扮演組次月職棒門票銷量比對照組高出 43%，且更愛課程。</td>
+            </tr>
+            <tr>
+              <td><strong>p.157–158</strong></td>
+              <td><strong>巴西青少年籃球訓練對照實驗</strong><br>（刻意玩樂 vs. 刻意練習）</td>
+              <td><span class="kpi-pill">75% 變體遊戲 vs. 50% 基本功</span></td>
+              <td>數月後測試跑向空檔與傳球擺脫防守：75% 時間玩限制規則遊戲（如只能傳不能投、1打2）的刻意玩樂組，籃球智商與創造力顯著提升；刻意練習組無進步。</td>
+            </tr>
+            <tr>
+              <td><strong>p.161</strong></td>
+              <td><strong>南韓銷售員與「抄寫電話簿」實驗</strong><br>（Jihae Shin & Adam Grant）</td>
+              <td><span class="kpi-pill">先看搞笑片 ➔ 抄錯更多</span></td>
+              <td>越喜歡最愛任務的業務員在討厭任務表現越差；先看搞笑 YouTube 影片再抄電話簿的受試者犯錯更多——「強烈對比」讓無聊任務更難熬。</td>
+            </tr>
+            <tr>
+              <td><strong>p.162–167</strong></td>
+              <td><strong>史蒂芬・柯瑞訓練與跟拍實測</strong><br>（Brandon Payne 21分遊戲）</td>
+              <td><span class="kpi-pill">789 場破紀錄 / 8%➔40%</span></td>
+              <td>柯瑞靠 1 分鐘 21 分遊戲＋每 20 分鐘交錯練習，僅 789 場破生涯三分球紀錄（前人逾 1,300 場）；YouTuber 每日跟練 2 小時，50 天後三分命中率由 8% 升至 40%。</td>
+            </tr>
+            <tr>
+              <td><strong>p.170–171</strong></td>
+              <td><strong>微休息與記憶鞏固實驗</strong><br>（遺忘曲線與間歇重複）</td>
+              <td><span class="kpi-pill">記憶力提升 10%–30%</span></td>
+              <td>休息 5–10 分鐘即可減疲勞；學後休息 10 分鐘使學生記憶力提升 10%–30%（中風與阿茲海默患者更高）；間歇穿插休息能防止 24 小時後遺忘曲線下滑。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">附錄價值</span>
+          <span>以上 8 組數據完整涵蓋音樂、醫療、銷售、運動與認知神經科學，證明「刻意玩樂＋交錯＋休息」具備跨領域普適性。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 附錄一：實證研究與數據總表</span>
+        <span>Source: Hidden Potential, Ch.4 (p.151–171)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 14: 附錄二 (Deep-Dive Footnotes & Cross-Chapter Links)
+         ========================================== -->
+    <section class="slide-canvas" data-slide="14">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">6. 附錄（二）｜ 值得深挖的原書註腳標註 ＆ 跨章節系統連動</span>
+          <span class="eyebrow-pace">閱讀節奏：40 秒 ｜ 延伸深挖</span>
+        </div>
+        <h2 class="action-title">
+          深挖原書四處關鍵註腳（註 47、49、50、51）與跨章脈絡，洞察「環境制度與個人鷹架」的協同效應
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <!-- Left: 4 Original Book Footnotes -->
+          <div class="mck-card" style="background:var(--white); justify-content:space-between;">
+            <div>
+              <div class="card-num">原書值得深挖的 4 個延伸註腳標註（Footnotes）</div>
+              <div class="card-title" style="margin:4px 0 12px 0;">藏在註腳裡的制度反思與科學邊界</div>
+              <div style="display:flex; flex-direction:column; gap:10px; font-size:13px; line-height:1.55; color:var(--gray-700);">
+                <div style="border-left:3px solid var(--navy-950); padding-left:10px;">
+                  <strong style="color:var(--navy-950);">📌 原注 47（p.155）｜長工時是否傷身，取決於熱情類型：</strong><br>
+                  引述 Nancy Rothbard 研究：長時間工作只有在「強迫症」驅使下才會導致憂鬱、睡眠問題、高血壓和高膽固醇；若由「和諧式熱情」驅使則不會傷身，且工作與生活衝突更少。
+                </div>
+                <div style="border-left:3px solid var(--amber-600); padding-left:10px;">
+                  <strong style="color:var(--amber-600);">📌 原注 49（p.159）｜跑步機（Treadmill）的英國監獄酷刑史：</strong><br>
+                  跑步機最初是 19 世紀初英國發明的監獄刑具，囚犯每天在巨輪上踩踏 6 小時。獄卒寫道，令囚犯恐懼的不是「殘酷的刑罰」，而是<strong>「單調的穩定性」</strong>——這正是悶爆（Boreout）的根源。
+                </div>
+                <div style="border-left:3px solid var(--navy-700); padding-left:10px;">
+                  <strong style="color:var(--navy-950);">📌 原注 50（p.165）｜棉花糖測試的社會環境修正：</strong><br>
+                  近期複製研究顯示，4 歲孩童能否等待第二顆棉花糖，除了個人刻意玩樂策略外，也反映<strong>「社會支持」</strong>：穩定環境的孩子相信等待有回報；資源匱乏環境的孩子則無法指望第二顆會出現，理性選擇把握當下。
+                </div>
+                <div style="border-left:3px solid var(--gray-500); padding-left:10px;">
+                  <strong style="color:var(--navy-950);">📌 原注 51（p.171）｜林-曼努爾・米蘭達與《漢密爾頓》：</strong><br>
+                  百老匯音樂劇《紐約高地》與《漢密爾頓》創作者，在度假泳池浮床上喝瑪格麗塔酒做白日夢時構思出《漢密爾頓》，印證「和諧熱情＋主動休息＝創意爆發」。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Cross-Chapter System Linkage (CH1 - CH4) -->
+          <div class="mck-card highlight" style="justify-content:space-between;">
+            <div>
+              <div class="card-num">《隱性潛能》PART 1 品格技能 ➔ PART 2 動力架構 系統連動</div>
+              <div class="card-title" style="margin:4px 0 12px 0;">本章（CH4）如何與前三個章節互相咬合？</div>
+
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <div style="background:var(--white); border:1px solid var(--gray-200); padding:10px 14px; font-size:12.5px;">
+                  <strong style="color:var(--navy-950);">🔗 連結 CH1【追求不適感】</strong><br>
+                  CH1 要我們勇敢踏出舒適圈、在準備好之前就行動；<strong>CH4 則確保踏出舒適圈後的日常練習不會變成痛苦折磨</strong>（如葛蘭妮用小鼓挑戰巴哈）。
+                </div>
+
+                <div style="background:var(--white); border:1px solid var(--gray-200); padding:10px 14px; font-size:12.5px;">
+                  <strong style="color:var(--navy-950);">🔗 連結 CH2【人形海綿】</strong><br>
+                  CH4 p.163 特別點出<strong>柯瑞早年的「海綿品格」</strong>（夏季聯賽表現糟糕卻不怪裁判或隊友，持續吸收教練指導），加上佩恩教練設計的刻意玩樂鷹架，才造就歷史第一射手。
+                </div>
+
+                <div style="background:var(--white); border:1px solid var(--gray-200); padding:10px 14px; font-size:12.5px;">
+                  <strong style="color:var(--navy-950);">🔗 連結 CH3【不完美主義者】</strong><br>
+                  CH3 強調「設定具體困難目標（如艾瑞克教練追求 Better 而非完美）」；<strong>CH4 的「21分遊戲」正是具體困難目標的遊戲化落地</strong>——不追求完美無瑕，只追求打破過去自己的分數與時間（p.165）。
+                </div>
+              </div>
+            </div>
+
+            <div style="background:var(--navy-950); color:var(--white); padding:12px 16px; font-size:13px; line-height:1.5;">
+              <strong style="color:var(--amber-500);">💡 延伸深挖建議：</strong>建議搭配原書 p.163–165 佩恩改造柯瑞的細節，檢視自身團隊的 KPI 與訓練菜單，將「高標準（CH3）」與「好玩的形式（CH4）」結合。
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">全簡報結語</span>
+          <span>品格技能（敢於不適、海綿吸收、接納不完美）提供成長的方向，而動力鷹架（刻意玩樂、交錯練習、主動休息）則提供走得長遠的燃料。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 附錄二：延伸深挖與跨章系統連動</span>
+        <span>Source: Hidden Potential, Ch.1–Ch.4 (p.146–174)</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SPEAKER NOTES DOCK (3-Part Script per Slide)
+         ========================================== -->
+    <aside class="speaker-notes-panel" id="speakerNotesPanel">
+      <div class="notes-header">
+        <span class="notes-title" id="notesSlideLabel">🎙️ 逐頁講者備忘稿（Slide 1 / 14）—— 建議停留 40–45 秒</span>
+        <span style="font-size:11.5px; color:var(--gray-300);">快捷鍵：按 <strong>N</strong> 顯示/隱藏講稿 ｜ 按 <strong>← / →</strong> 翻頁</span>
+      </div>
+      <div class="notes-grid">
+        <div class="note-block primary">
+          <div class="note-label">① 本頁結論（一句話重申這頁重點）</div>
+          <div class="note-content" id="noteConclusion"></div>
+        </div>
+        <div class="note-block">
+          <div class="note-label">② 補充說明（來源中支持這個結論的細節或例子）</div>
+          <div class="note-content" id="noteDetail"></div>
+        </div>
+        <div class="note-block">
+          <div class="note-label">③ 下一頁轉場（如何銜接到下一頁）</div>
+          <div class="note-content" id="noteTransition"></div>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <script>
+    // 14 Slides 3-Part Speaker Notes strictly grounded in Hidden Potential Ch.4 (p.146-p.174)
+    const speakerNotes = [
+      {
+        conclusion: "《隱性潛能》第四章的核心主張是：釋放潛能的最佳途徑不是靠意志力硬撐單調的日常磨練，而是透過「刻意玩樂、交錯練習與定時休息」打造動力鷹架，把每天的苦練變成快樂泉源。",
+        detail: "本章是全書第二部「動力架構（搭建克服障礙的鷹架）」的第一章（原書 p.146–174）。開篇引用遊戲設計師伯納德・德科文的名言：「滿足我們的，既不是工作，也不是玩樂；既不是目的，也不是漫無目的，而是中間的反覆橫跳。」揭示工作與玩樂並非對立，而是可以融合的動力系統。",
+        transition: "了解本章的一句話核心主張後，下一頁我們先用一張「全章架構圖」，鳥瞰作者如何從問題診斷一步步搭建出三大動力鷹架。"
+      },
+      {
+        conclusion: "本章的邏輯骨架由「問題診斷（過勞與悶爆）→ 核心心態（和諧式熱情）→ 三大方法鷹架（刻意玩樂、交錯改規則、定時休息）」所構成，三者互相支撐缺一不可。",
+        detail: "傳統「一萬小時定律」讓人陷入「我必須練」的強迫壓力，導致過度工作的「過勞（Burnout）」與刺激不足的「悶爆（Boreout）」。格蘭特提出以「和諧式熱情（我想要學）」為基底，再透過第 2 節的刻意玩樂、第 3 節的交錯練習與第 4 節的主動休息，解決從動機啟動到長久續航的所有痛點。",
+        transition: "看懂了全章的骨架，接下來我們進入「逐節重點」。首先看開場最震撼的真實案例：一位 12 歲全聾的女孩，如何顛覆整個音樂界？"
+      },
+      {
+        conclusion: "蘇格蘭少女依芙琳・葛蘭妮從 12 歲完全失聰、遭皇家音樂學院斷言「毫無希望」，到成為全球首位全職獨奏打擊樂家，關鍵在於老師羅恩・福布斯與她一起搭建的「感官玩樂鷹架」。",
+        detail: "葛蘭妮首次面試演奏了《威廉・泰爾序曲》與莫札特奏鳴曲仍因失聰被拒；但老師羅恩不逼她練枯燥音階，而是讓她把手貼在牆上、赤腳踏地感受震動（高音在臉頸、低音在腿腳），並縮小音高差距讓她像「電玩升級」般用指尖分辨，甚至挑戰用小鼓演奏巴哈。不到 10 年她每年辦 100 場售罄音樂會並奪得 3 座葛萊美獎（p.146–149）。",
+        transition: "葛蘭妮說「玩樂與努力之間從無區別」。這引出了第 1 節要解決的核心問題：為什麼傳統強迫苦練常常失敗，而頂尖專家真正的動力來源又是什麼？"
+      },
+      {
+        conclusion: "盲目崇拜「一萬小時定律」與強迫式苦練只會帶來過勞與悶爆；127 項研究證實，唯有「我想要學」的和諧式熱情，才能讓人自然進入心流並創造卓越績效。",
+        detail: "原書 p.151 指出，莫札特童年受父親毫無保留的奴役，十幾歲手指寫宣敘調寫到痛、近 30 歲感嘆演出太多好累——他是「熬過了」強迫練習才成功。心理學家勞倫・索斯尼亞克研究 40 歲以下國際鋼琴家也發現，他們幼時每天只練 1 小時且無虎爸虎媽。涵蓋 127 項研究、逾 4.5 萬人的後設分析與原注 47 證實，和諧式熱情既能提升績效，又不會像強迫症那樣引發憂鬱、失眠與高血壓。",
+        transition: "既然「和諧式熱情」這麼重要，如果我們面對的日常練習或工作本來就很枯燥，該怎麼把熱情注入其中？下一頁進入第 2 節：刻意玩樂。"
+      },
+      {
+        conclusion: "「刻意玩樂（Deliberate Play）」結合了刻意練習的結構化拆解與自由玩樂的樂趣，在醫療與業務銷售領域不僅能降低倦怠，更讓門票銷售業績大幅提升 43%。",
+        detail: "刻意玩樂是在方法、工具、目標或人員中引入新奇性與多樣性（p.154）。例如「快針護士」讓怕打針的孩子幫她計時挑戰最快紀錄；醫學院用「外國電影」即興劇（一人喊胡言亂語、搭檔解讀手勢表情）提升醫師同理心與症狀辨識力；業務培訓讓學員對抱著盒子的冷淡顧客持續提問 3 分鐘不間斷，次月職棒門票銷量直接比對照組高出 43%（p.155–156）。",
+        transition: "刻意玩樂在職場培訓效果驚人，那麼在高度競爭的體育訓練中呢？它跟時下流行的「積分遊戲化」又有什麼不同？我們看下一頁。"
+      },
+      {
+        conclusion: "巴西青少年籃球實驗證明，將 75% 時間投入「刻意玩樂」能顯著提升籃球智商與創造力；而真正的刻意玩樂是「重新設計任務本身」，絕非在枯燥任務外貼上積分排行榜。",
+        detail: "在巴西籃球實驗中，刻意練習組花逾 50% 時間練基本功與聽教練糾正，刻意玩樂組花約 75% 時間玩變體遊戲（如搭檔只能傳球不能投籃、1打2或3打4）；數月後僅刻意玩樂組的跑位與傳球創造力顯著提升（p.157–158）。原書 p.159 與原注 49 更揭露：跑步機原是 19 世紀初英國監獄發明的酷刑（囚犯日踩 6 小時，苦於「單調的穩定性」），表面遊戲化（排行榜、積分）無法讓人愛上討厭的日常活動。",
+        transition: "這時你可能會問：有些基本功（如籃球體能折返跑）天生就像跑步機一樣枯燥，我們能不能「先玩樂放鬆、再去苦練體能」？下一頁第 3 節用實驗揭曉答案。"
+      },
+      {
+        conclusion: "把有趣活動與無聊訓練分開交替，反而會因「強烈對比效應」增加失誤率；真正的自律高手（包括棉花糖測試成功的孩童）靠的不是意志力硬撐，而是把抗拒直接改造成遊戲。",
+        detail: "格蘭特與申智海研究南韓零售業務員發現，越愛喜愛任務的人在討厭任務表現越差；「抄寫電話簿實驗」更顯示，先看搞笑 YouTube 影片再抄電話簿的組別犯錯更多，因為對比讓抄寫顯得更無聊（p.161）！心理學家達克沃斯重看棉花糖測試影片也發現，4 歲孩童並非靠意志力苦撐，而是遮眼睛、坐手上或把棉花糖揉成球當玩具彈跳（p.163–164）。",
+        transition: "既然不能「先樂後苦」，籃球教練布蘭登・佩恩是如何幫當年被球探看扁的史蒂芬・柯瑞，把最討厭的體能訓練揉進投籃裡的？請看下一頁。"
+      },
+      {
+        conclusion: "史蒂芬・柯瑞透過佩恩設計的「21分遊戲」與每 20 分鐘切換的「交錯練習」，僅用 789 場就打破 NBA 生涯三分球紀錄；一般 YouTuber 跟練 50 天命中率也從 8% 暴增至 40%。",
+        detail: "柯瑞身高 188 公分、體重 84 公斤，早年被球探斷言缺乏爆發力成不了球星。佩恩設計「21分遊戲」：限時 1 分鐘內結合三分球、跳投與上籃拿 21 分，且每次出手後必須衝刺到半場再折返，同時挑戰過去自己的目標分數與時間（p.164–165）。此外每隔 20 分鐘就交錯切換不同訓練（Interleaving，數百項實驗證實優於單一重複），連唐西奇跟練後也成功減重提速（p.166–167）。",
+        transition: "看到這裡，刻意玩樂與交錯練習似乎所向披靡。但這股和諧式熱情可以讓我們每天從早到晚無止境練習嗎？下一頁進入第 4 節：讓我休息一下。"
+      },
+      {
+        conclusion: "強迫症讓我們誤以為休息是偷懶、直到油箱見底才肯停下；科學實證顯示，在「想要休息時」主動定時休息，能帶來維持熱情、激發創意與提升 10%–30% 記憶力三大效益。",
+        detail: "原書 p.170–171 整理休息三大好處：① 短休 5–10 分鐘即減疲勞，馬友友日練 3–6 小時且避開晨夜，蕭邦力勸學生夏天日練不超過 2 小時；② 休息能孵化創意，林-曼努爾・米蘭達正是在度假泳池浮床上喝瑪格麗塔酒做白日夢時構思出音樂劇《漢密爾頓》，貝多芬、柴可夫斯基與馬勒每天散步時間更與工作一樣長；③ 學後休息 10 分鐘可提升 10%–30% 記憶力，並透過間歇重複對抗 24 小時遺忘曲線。",
+        transition: "掌握了休息的科學數據與兩幅經典插畫（火柴圖與油表圖）後，下一頁我們回到女主角依芙琳・葛蘭妮，看她如何從過度練習的陷阱中領悟出「20 分鐘法則」。"
+      },
+      {
+        conclusion: "葛蘭妮不僅改變全英國音樂學院的入學審查規則並領銜 2012 倫敦奧運開幕式，更以「單次練習不超過 20 分鐘」與拯救倦怠琴童的即興挑戰，證明「樂在其中」才是釋放潛能的關鍵。",
+        detail: "葛蘭妮二次面試皇家音樂學院時要求評審看表演能力而非身體缺陷，促使全英國修改入學規則；2012 倫敦奧運她率領 1,000 名鼓手並演奏自創的馬林巴鋁琴（p.169）。但她剛進學院時曾因同儕壓力提早一小時起床練到深夜而喪失創意；如今她單次練習很少超過 20 分鐘，失去注意力就停下（「重質不重量」）。面對因考試倦怠的小提琴女孩，她用反向演奏、發明 10 種非傳統奏法與融入動物聲音三個挑戰，讓女孩重拾笑容（p.173–174）。",
+        transition: "走完原書全部四節的內容後，下一頁我們用一張「五階邏輯串連圖」，回顧作者是如何環環相扣、把整章論證疊加起來的。"
+      },
+      {
+        conclusion: "本章並非零散的案例集合，而是嚴密的五步因果鏈：每一節的結論都精準解決了一個讀者的懷疑，並自然成為下一節推論的前提。",
+        detail: "第 1 步用葛蘭妮破除「苦練迷思」→ 引出第 2 步診斷強迫苦練的「過勞與悶爆」，確立「和諧式熱情」為前提 → 引出第 3 步用「刻意玩樂」改造任務本身（醫療、業務+43%、巴西籃球）→ 引出第 4 步用電話簿實驗否定「先樂後苦」，確立柯瑞「21分遊戲＋每20分鐘交錯練習」→ 最終第 5 步解答「熱情能否無止境運轉」，以定時主動休息完成永續閉環。",
+        transition: "釐清了全章的論證脈絡後，下一頁我們將全章精華濃縮為 5 大重點，並給出一個你今天讀完就能立刻執行的具體行動方案。"
+      },
+      {
+        conclusion: "掌握「和諧熱情、刻意玩樂、拒絕先樂後苦、20分鐘交錯、主動休息」五大重點，並從今天起對最抗拒的任務啟動「20-20-10 刻意玩樂工作法」。",
+        detail: "讀完本章後可以立刻應用的一件事：挑出今天最單調或最抗拒的一項任務，① 前 20 分鐘設定「跟昨天自己比」的限時雙指標（如柯瑞 21 分遊戲）；② 滿 20 分鐘計時器一響，強制交錯切換到另一項不同性質的子任務（Interleaving）；③ 結束後離開螢幕散步或放空 10 分鐘，鎖住 10%–30% 記憶增益並孵化創意。",
+        transition: "最後兩頁附錄，我們為需要深入查考或對內分享的讀者，整理了「全章 8 大實證研究數據總表」以及「原書 4 個關鍵註腳與跨章系統連動」。"
+      },
+      {
+        conclusion: "附錄一完整彙整本章 8 項心理學實驗與實證數據，從 4.5 萬人後設分析到銷售、籃球、記憶力實驗，提供最堅實的科學證據。",
+        detail: "這張矩陣涵蓋了書頁 p.151 到 p.171 的所有核心數據：包含 Sosniak 鋼琴家每日 1 小時、127 項研究後設分析、醫療快針護士與外國電影即興劇、職棒門票銷售 +43%、巴西青少年籃球 75% 刻意玩樂、申智海電話簿對比實驗、柯瑞 789 場破紀錄與 YouTuber 50 天 8%→40%，以及學後休息 10 分鐘提升 10%–30% 記憶力。",
+        transition: "除了正文的實驗數據外，原書底部的註腳其實藏著極具深度的制度與社會學洞察，我們請看最後一頁附錄二。"
+      },
+      {
+        conclusion: "附錄二深挖原書四處關鍵註腳（註 47、49、50、51）並串聯前四章系統：品格技能決定成長方向，而動力鷹架則提供走得長遠的燃料。",
+        detail: "特別值得深挖的是原注 49（跑步機原是 19 世紀初英國監獄每日踩 6 小時的酷刑，可怕在於單調的穩定性）以及原注 50（棉花糖測試除了刻意玩樂策略，也反映穩定環境的社會支持與信任）。當我們將 CH1 追求不適感、CH2 人形海綿、CH3 不完美主義者與 CH4 改變日常磨練結合，就能建立「高標準目標（CH3）＋好玩交錯形式（CH4）」的超級個體成長系統。",
+        transition: "以上就是《隱性潛能》第四章「改變日常磨練」的 10 分鐘精華導讀簡報。感謝聆聽，現在就挑選一項日常任務，開始你的第一個 20 分鐘刻意玩樂吧！"
+      }
+    ];
+
+    let currentSlide = 1;
+    const totalSlides = 14;
+
+    function updateSlideView() {
+      document.querySelectorAll('.slide-canvas').forEach(el => {
+        const slideNum = parseInt(el.getAttribute('data-slide'), 10);
+        el.classList.toggle('active', slideNum === currentSlide);
+      });
+
+      document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+      document.getElementById('progressFill').style.width = `${(currentSlide / totalSlides) * 100}%`;
+
+      // Update Speaker Notes
+      const note = speakerNotes[currentSlide - 1];
+      document.getElementById('notesSlideLabel').textContent = `🎙️ 逐頁講者備忘稿（Slide ${currentSlide} / ${totalSlides}）—— 建議停留 40–45 秒`;
+      document.getElementById('noteConclusion').textContent = note.conclusion;
+      document.getElementById('noteDetail').textContent = note.detail;
+      document.getElementById('noteTransition').textContent = note.transition;
+    }
+
+    function nextSlide() {
+      if (document.body.classList.contains('overview-mode')) {
+        toggleOverview();
+      }
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlideView();
+      }
+    }
+
+    function prevSlide() {
+      if (document.body.classList.contains('overview-mode')) {
+        toggleOverview();
+      }
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlideView();
+      }
+    }
+
+    function toggleNotes() {
+      const panel = document.getElementById('speakerNotesPanel');
+      const btn = document.getElementById('btnNotes');
+      panel.classList.toggle('hidden');
+      btn.classList.toggle('active', !panel.classList.contains('hidden'));
+    }
+
+    function toggleOverview() {
+      const isOverview = document.body.classList.toggle('overview-mode');
+      document.getElementById('btnOverview').classList.toggle('active', isOverview);
+    }
+
+    // Click slide in overview mode to jump to it
+    document.querySelectorAll('.slide-canvas').forEach(el => {
+      el.addEventListener('click', () => {
+        if (document.body.classList.contains('overview-mode')) {
+          currentSlide = parseInt(el.getAttribute('data-slide'), 10);
+          document.body.classList.remove('overview-mode');
+          document.getElementById('btnOverview').classList.remove('active');
+          updateSlideView();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'n' || e.key === 'N') {
+        toggleNotes();
+      } else if (e.key === 'g' || e.key === 'G') {
+        toggleOverview();
+      }
+    });
+
+    // Initialize
+    updateSlideView();
+  </script>
+</body>
+</html>
