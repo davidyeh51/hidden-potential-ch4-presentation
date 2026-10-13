@@ -562,6 +562,122 @@
       border-top-color: var(--amber-600);
     }
 
+    /* Person Profile Cards (Appendix III) */
+    .person-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      flex: 1;
+    }
+
+    .person-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-top: 3px solid var(--navy-950);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .person-card.highlight {
+      background: var(--amber-50);
+      border-top-color: var(--amber-600);
+    }
+
+    .person-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 8px;
+    }
+
+    .person-avatar {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 18%;
+      border: 2px solid var(--navy-950);
+      background: var(--white);
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(5, 28, 44, 0.15);
+    }
+
+    .person-card.highlight .person-avatar {
+      border-color: var(--amber-600);
+    }
+
+    .person-avatar-pair {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .person-avatar-pair .person-avatar {
+      width: 48px;
+      height: 48px;
+    }
+
+    .person-avatar-pair .person-avatar + .person-avatar {
+      margin-left: -12px;
+    }
+
+    .person-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .person-name {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--navy-950);
+      line-height: 1.25;
+    }
+
+    .person-en {
+      font-size: 11px;
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-500);
+      margin-top: 1px;
+    }
+
+    .person-page-tag {
+      display: inline-block;
+      margin-top: 3px;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--amber-600);
+      background: var(--white);
+      border: 1px solid var(--amber-500);
+      padding: 1px 6px;
+    }
+
+    .person-body {
+      font-size: 12px;
+      line-height: 1.48;
+      color: var(--gray-700);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      flex: 1;
+    }
+
+    .person-role-box {
+      background: var(--white);
+      border-left: 3px solid var(--navy-700);
+      padding: 5px 8px;
+      font-size: 11.8px;
+      line-height: 1.45;
+      color: var(--gray-900);
+    }
+
+    .person-card.highlight .person-role-box {
+      border-left-color: var(--amber-600);
+    }
+
     /* Overview Grid Mode */
     body.overview-mode .stage-wrapper {
       display: grid;
@@ -587,7 +703,7 @@
     }
 
     @media (max-width: 1024px) {
-      .grid-3, .grid-2, .grid-2-asym, .chain-container, .notes-grid {
+      .grid-3, .grid-2, .grid-2-asym, .chain-container, .notes-grid, .person-grid {
         grid-template-columns: 1fr;
       }
       .arch-row {
@@ -637,7 +753,7 @@
     </div>
     <div class="topbar-controls">
       <button class="btn-nav" onclick="prevSlide()" title="上一頁 (←)">◀ 上一頁</button>
-      <span class="slide-counter" id="slideCounter">1 / 14</span>
+      <span class="slide-counter" id="slideCounter">1 / 16</span>
       <button class="btn-nav" onclick="nextSlide()" title="下一頁 (→)">下一頁 ▶</button>
       <button class="btn-nav active" id="btnNotes" onclick="toggleNotes()" title="切換講者備忘稿 (N)">🎙️ 講稿 (N)</button>
       <button class="btn-nav" id="btnOverview" onclick="toggleOverview()" title="全覽模式 (G)">⊞ 全覽 (G)</button>
@@ -666,7 +782,7 @@
             <span style="color:var(--amber-500);">為練習注入和諧式熱情</span>
           </h1>
           <p style="font-size:17px; color:var(--gray-300); margin-bottom:28px;">
-            作者：<strong style="color:var(--white);">亞當・格蘭特（Adam Grant）</strong> ｜ 導讀節奏：14 頁精華・每頁 40–45 秒・10 分鐘完整掌握
+            作者：<strong style="color:var(--white);">亞當・格蘭特（Adam Grant）</strong> ｜ 導讀節奏：16 頁精華・每頁 40–45 秒・10 分鐘完整掌握
           </p>
 
           <!-- 一句話核心主張 -->
@@ -1879,7 +1995,7 @@
         </div>
 
         <div class="bottom-takeaway">
-          <span class="takeaway-badge">全簡報結語</span>
+          <span class="takeaway-badge">系統啟示</span>
           <span>品格技能（敢於不適、海綿吸收、接納不完美）提供成長的方向，而動力鷹架（刻意玩樂、交錯練習、主動休息）則提供走得長遠的燃料。</span>
         </div>
       </div>
@@ -1891,11 +2007,294 @@
     </section>
 
     <!-- ==========================================
+         SLIDE 15: 附錄三之一 (Real People Profiles: Core Protagonists & Coaches)
+         ========================================== -->
+    <section class="slide-canvas" data-slide="15">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">6. 附錄（三）之一 ｜ 全章實際人物檔案對照：核心案例主角、運動巨星與幕後恩師</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒 ｜ 人物相片與經歷查考</span>
+        </div>
+        <h2 class="action-title">
+          從失聰打擊樂女王葛蘭妮到 NBA 三分球王柯瑞，頂尖突破皆源於「<span class="accent">主角海綿品格 × 教練玩樂鷹架</span>」
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="person-grid">
+          <!-- Person 1: Evelyn Glennie -->
+          <div class="person-card highlight">
+            <div class="person-header">
+              <img class="person-avatar" src="assets/people/evelyn_glennie.jpg" alt="依芙琳・葛蘭妮 Dame Evelyn Glennie">
+              <div class="person-meta">
+                <div class="person-name">依芙琳・葛蘭妮女爵士</div>
+                <div class="person-en">Dame Evelyn Glennie (1965–)</div>
+                <span class="person-page-tag">原書 p.146–150, 168–169, 172–174</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>蘇格蘭傳奇打擊樂家，8歲聽力衰退、12歲完全失聰；成為史上首位全職獨奏打擊樂家，年辦百場音樂會，獲 3 座葛萊美獎、2015 極地音樂獎，領銜 2012 倫敦奧運開幕式千人擊鼓。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>貫穿全章核心主角。以雙手貼牆與赤腳感受共振、用小鼓挑戰巴哈；促使全英音樂學院修改入學規則；實踐「單次不超過 20 分鐘」主動休息並以即興遊戲拯救倦怠琴童。
+              </div>
+            </div>
+          </div>
+
+          <!-- Person 2: Ron Forbes -->
+          <div class="person-card">
+            <div class="person-header">
+              <img class="person-avatar" src="assets/people/ron_forbes.jpg" alt="羅恩・福布斯 Ron Forbes">
+              <div class="person-meta">
+                <div class="person-name">羅恩・福布斯</div>
+                <div class="person-en">Ron Forbes</div>
+                <span class="person-page-tag">原書 p.147–149</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>蘇格蘭阿伯丁郡艾倫鎮學校打擊樂教師，曾服役於英國皇家空軍樂隊，培育多位蘇格蘭傑出打擊樂人才，為葛蘭妮音樂生涯最關鍵的啟蒙恩師。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>拒絕逼失聰的葛蘭妮苦練枯燥音階，要求她把手貼在牆上感受定音鼓震動、在小鼓縮小音高差距如「電玩升級」，並拋出「用小鼓演奏巴哈」的刻意玩樂鷹架。
+              </div>
+            </div>
+          </div>
+
+          <!-- Person 3: Stephen Curry -->
+          <div class="person-card highlight">
+            <div class="person-header">
+              <img class="person-avatar" src="assets/people/stephen_curry.jpg" alt="史蒂芬・柯瑞 Stephen Curry">
+              <div class="person-meta">
+                <div class="person-name">史蒂芬・柯瑞</div>
+                <div class="person-en">Stephen Curry (1988–)</div>
+                <span class="person-page-tag">原書 p.162–167</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>NBA 金州勇士隊傳奇控球後衛，4 屆 NBA 總冠軍、2 屆年度 MVP（含全票 MVP）、NBA 歷史三分球命中數最高紀錄保持人。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>第 3 節核心主角。188 公分/84 公斤早年被球探看扁；靠「海綿品格」與佩恩設計的「21分遊戲」及每 20 分鐘交錯練習，僅 789 場即破生涯三分球紀錄（前人逾 1,300 場）。
+              </div>
+            </div>
+          </div>
+
+          <!-- Person 4: Brandon Payne -->
+          <div class="person-card">
+            <div class="person-header">
+              <img class="person-avatar" src="assets/people/brandon_payne.jpg" alt="布蘭登・佩恩 Brandon Payne">
+              <div class="person-meta">
+                <div class="person-name">布蘭登・佩恩</div>
+                <div class="person-en">Brandon Payne</div>
+                <span class="person-page-tag">原書 p.163–167</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>知名籃球技能訓練機構 Accelerate Basketball 創辦人暨執行長，自 2011 年起擔任柯瑞專屬私人訓練師，專精神經認知與高強度籃球技能系統。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>自第 2 堂課起為柯瑞改造訓練規則，設計限時 1 分鐘「21分遊戲」將枯燥折返跑揉進投籃，並每 20 分鐘交錯切換挑戰（Interleaving），與「過去的自己」比對目標分數與時間。
+              </div>
+            </div>
+          </div>
+
+          <!-- Person 5: Luka Doncic -->
+          <div class="person-card">
+            <div class="person-header">
+              <img class="person-avatar" src="assets/people/luka_doncic.jpg" alt="盧卡・唐西奇 Luka Dončić">
+              <div class="person-meta">
+                <div class="person-name">盧卡・唐西奇</div>
+                <div class="person-en">Luka Dončić (1999–)</div>
+                <span class="person-page-tag">原書 p.166–167</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>斯洛維尼亞職業籃球巨星，19 歲即奪歐洲聯賽 MVP，後成為 NBA 頂級全明星後衛、得分王與年度第一隊常客。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>佩恩「刻意玩樂＋交錯訓練」跨球員實證。曾被批評體型走樣與速度慢，跟隨佩恩進行數週多樣化交錯訓練後減重 4.5 公斤、明顯變快，並讚嘆「每次訓練都充滿樂趣」。
+              </div>
+            </div>
+          </div>
+
+          <!-- Person 6: Steve Kerr -->
+          <div class="person-card">
+            <div class="person-header">
+              <img class="person-avatar" src="assets/people/steve_kerr.jpg" alt="史蒂夫・科爾 Steve Kerr">
+              <div class="person-meta">
+                <div class="person-name">史蒂夫・科爾</div>
+                <div class="person-en">Steve Kerr (1965–)</div>
+                <span class="person-page-tag">原書 p.167</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>NBA 金州勇士隊總教練、前美國男籃總教練。球員時期獲 5 座總冠軍（公牛、馬刺），執教勇士隊再奪 4 座總冠軍（共 9 枚冠軍戒）。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>見證柯瑞「刻意玩樂與交錯練習」的長期威力，於書中評價道：「我從來沒見過像他這樣日復一日保持專注的人。這是他維持高水準表現的關鍵。」
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">人物洞察 ①</span>
+          <span>葛蘭妮與福布斯、柯瑞與佩恩這兩組師徒證明：頂尖高手並非天生神力，而是遇到了懂得把枯燥訓練改造成「好玩挑戰」的引路人。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 附錄三之一：核心案例人物檔案對照表</span>
+        <span>Source: Hidden Potential, Ch.4 (p.146–174) & Public Biographical Archives</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 16: 附錄三之二 (Real People Profiles: Artists, Theorists, Psychologists & Classical Masters)
+         ========================================== -->
+    <section class="slide-canvas" data-slide="16">
+      <div class="slide-header">
+        <div class="slide-eyebrow">
+          <span class="eyebrow-tag">6. 附錄（三）之二 ｜ 全章實際人物檔案對照：藝術巨匠、遊戲理論家與實證心理學家</span>
+          <span class="eyebrow-pace">閱讀節奏：45 秒 ｜ 人物相片與經歷查考</span>
+        </div>
+        <h2 class="action-title">
+          橫跨百老匯、古典樂壇與心理學界的巨匠實證：最偉大的創造力皆誕生於「<span class="accent">和諧熱情與主動留白</span>」
+        </h2>
+      </div>
+
+      <div class="slide-body">
+        <div class="person-grid">
+          <!-- Card 1: Lin-Manuel Miranda -->
+          <div class="person-card highlight">
+            <div class="person-header">
+              <img class="person-avatar" src="assets/people/lin_manuel_miranda.jpg" alt="林-曼努爾・米蘭達 Lin-Manuel Miranda">
+              <div class="person-meta">
+                <div class="person-name">林-曼努爾・米蘭達</div>
+                <div class="person-en">Lin-Manuel Miranda (1980–)</div>
+                <span class="person-page-tag">原書 p.171 & 原注 51</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>美國百老匯音樂劇作曲家、劇作家與演員，代表作《紐約高地》與《漢密爾頓》，橫掃普立茲戲劇獎、東尼獎、葛萊美獎與麥克阿瑟天才獎。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>主動休息孵化創意的典範。結束《紐約高地》數年密集工作後，在度假泳池浮床上喝瑪格麗塔酒做白日夢時，靈光一閃構思出傳奇音樂劇《漢密爾頓》。
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Yo-Yo Ma -->
+          <div class="person-card">
+            <div class="person-header">
+              <img class="person-avatar" src="assets/people/yo_yo_ma.jpg" alt="馬友友 Yo-Yo Ma">
+              <div class="person-meta">
+                <div class="person-name">馬友友</div>
+                <div class="person-en">Yo-Yo Ma (1955–)</div>
+                <span class="person-page-tag">原書 p.170</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>享譽全球的華裔美籍大提琴演奏家，曾獲 19 座葛萊美獎、美國總統自由勳章與極地音樂獎，被公認為當代最具影響力的古典音樂大師。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>反駁「無止境苦練」的大師明證。作者指出馬友友每天練琴僅約 3 到 6 小時，且嚴格避開清晨與深夜，證明定時休息與留白才能維持巔峰熱情。
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Bernard De Koven -->
+          <div class="person-card">
+            <div class="person-header">
+              <img class="person-avatar" src="assets/people/bernie_dekoven.jpg" alt="伯納德・德科文 Bernard De Koven">
+              <div class="person-meta">
+                <div class="person-name">伯納德・德科文</div>
+                <div class="person-en">Bernard De Koven (1941–2018)</div>
+                <span class="person-page-tag">原書 p.146 開篇題辭</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>美國傳奇遊戲設計師、教育家與玩樂理論先驅，創辦「新遊戲基金會（New Games Foundation）」，著有經典名作《玩得好的遊戲》。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>全章開篇靈魂題辭作者：「滿足我們的，既不是工作，也不是玩樂；既不是目的，也不是漫無目的，而是中間的反覆橫跳。」奠定全章「刻意玩樂」哲學基調。
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Angela Duckworth & Adam Grant (+ Scholars) -->
+          <div class="person-card highlight">
+            <div class="person-header">
+              <div class="person-avatar-pair">
+                <img class="person-avatar" src="assets/people/angela_duckworth.jpg" alt="安傑拉・達克沃斯 Angela Duckworth">
+                <img class="person-avatar" src="assets/people/adam_grant.jpg" alt="亞當・格蘭特 Adam Grant">
+              </div>
+              <div class="person-meta">
+                <div class="person-name">達克沃斯 ＆ 格蘭特（與學者群）</div>
+                <div class="person-en">A. Duckworth, A. Grant, J. Shin, L. Sosniak</div>
+                <span class="person-page-tag">原書 p.151–165 & 註 47</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>達克沃斯為賓大教授、《恆毅力》作者；格蘭特為華頓商學院最年輕終身教授（前跳水選手，p.154）；攜手申智海（Jihae Shin）、索斯尼亞克、羅斯巴德等學者。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>達克沃斯重看棉花糖測試揭露孩童靠「玩樂改造抗拒」（p.163）；格蘭特與申智海以電話簿實驗破除「先樂後苦」（p.161）；索斯尼亞克與羅斯巴德實證和諧熱情（p.151, 155）。
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Mozart & Bach -->
+          <div class="person-card">
+            <div class="person-header">
+              <div class="person-avatar-pair">
+                <img class="person-avatar" src="assets/people/mozart.jpg" alt="莫札特 Mozart">
+                <img class="person-avatar" src="assets/people/bach.jpg" alt="巴哈 Bach">
+              </div>
+              <div class="person-meta">
+                <div class="person-name">莫札特 ＆ 巴哈</div>
+                <div class="person-en">W. A. Mozart (1756–91) & J. S. Bach (1685–1750)</div>
+                <span class="person-page-tag">原書 p.147, 149, 151</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>莫札特為古典時期奧地利音樂神童與巨匠；巴哈為巴洛克時期德國作曲大師，被尊為「西方現代音樂之父」。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>莫札特童年受父親奴役苦練（手指寫宣敘調寫到痛、近30歲感嘆太累），格蘭特指出他是「熬過了」而非「受惠於」強迫練習；巴哈曲目則成為羅恩給葛蘭妮的小鼓進階挑戰。
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Chopin & Beethoven (+ Tchaikovsky, Mahler, Rossini) -->
+          <div class="person-card">
+            <div class="person-header">
+              <div class="person-avatar-pair">
+                <img class="person-avatar" src="assets/people/chopin.jpg" alt="蕭邦 Chopin">
+                <img class="person-avatar" src="assets/people/beethoven.jpg" alt="貝多芬 Beethoven">
+              </div>
+              <div class="person-meta">
+                <div class="person-name">蕭邦 ＆ 貝多芬（與浪漫派巨匠）</div>
+                <div class="person-en">Chopin, Beethoven, Tchaikovsky, Mahler</div>
+                <span class="person-page-tag">原書 p.147, 170–171</span>
+              </div>
+            </div>
+            <div class="person-body">
+              <div><strong>真實經歷：</strong>蕭邦為波蘭「鋼琴詩人」；貝多芬為德國「樂聖」；連同柴可夫斯基、馬勒與羅西尼（《威廉・泰爾序曲》作者），皆為西方音樂史巔峰作曲家。</div>
+              <div class="person-role-box">
+                <strong>書中事蹟：</strong>蕭邦力勸學生夏天每天練琴「絕不超過 2 小時」；貝多芬、柴可夫斯基與馬勒每天散步時間與工作一樣長，在休息散步中孵化出最偉大的交響樂靈感。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-takeaway">
+          <span class="takeaway-badge">人物洞察 ②</span>
+          <span>全章 19 位真實人物橫跨 300 年歷史，一致印證：苦行僧式的強迫練習並非天才的必經之路，「刻意玩樂 × 交錯切換 × 主動休息」才是大師共通的日常。</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>《隱性潛能》CH4 改變日常磨練 ｜ 附錄三之二：藝術巨匠與學者人物檔案對照表</span>
+        <span>Source: Hidden Potential, Ch.4 (p.146–174) & Public Biographical Archives</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
          SPEAKER NOTES DOCK (3-Part Script per Slide)
          ========================================== -->
     <aside class="speaker-notes-panel" id="speakerNotesPanel">
       <div class="notes-header">
-        <span class="notes-title" id="notesSlideLabel">🎙️ 逐頁講者備忘稿（Slide 1 / 14）—— 建議停留 40–45 秒</span>
+        <span class="notes-title" id="notesSlideLabel">🎙️ 逐頁講者備忘稿（Slide 1 / 16）—— 建議停留 40–45 秒</span>
         <span style="font-size:11.5px; color:var(--gray-300);">快捷鍵：按 <strong>N</strong> 顯示/隱藏講稿 ｜ 按 <strong>← / →</strong> 翻頁</span>
       </div>
       <div class="notes-grid">
@@ -1917,7 +2316,7 @@
   </main>
 
   <script>
-    // 14 Slides 3-Part Speaker Notes strictly grounded in Hidden Potential Ch.4 (p.146-p.174)
+    // 16 Slides 3-Part Speaker Notes strictly grounded in Hidden Potential Ch.4 (p.146-p.174)
     const speakerNotes = [
       {
         conclusion: "《隱性潛能》第四章的核心主張是：釋放潛能的最佳途徑不是靠意志力硬撐單調的日常磨練，而是透過「刻意玩樂、交錯練習與定時休息」打造動力鷹架，把每天的苦練變成快樂泉源。",
@@ -1977,22 +2376,32 @@
       {
         conclusion: "掌握「和諧熱情、刻意玩樂、拒絕先樂後苦、20分鐘交錯、主動休息」五大重點，並從今天起對最抗拒的任務啟動「20-20-10 刻意玩樂工作法」。",
         detail: "讀完本章後可以立刻應用的一件事：挑出今天最單調或最抗拒的一項任務，① 前 20 分鐘設定「跟昨天自己比」的限時雙指標（如柯瑞 21 分遊戲）；② 滿 20 分鐘計時器一響，強制交錯切換到另一項不同性質的子任務（Interleaving）；③ 結束後離開螢幕散步或放空 10 分鐘，鎖住 10%–30% 記憶增益並孵化創意。",
-        transition: "最後兩頁附錄，我們為需要深入查考或對內分享的讀者，整理了「全章 8 大實證研究數據總表」以及「原書 4 個關鍵註腳與跨章系統連動」。"
+        transition: "最後四頁附錄，我們為需要深入查考的讀者，整理了「8 大實證研究總表」、「4 個關鍵註腳與跨章連動」，以及「全章實際人物的相片、經歷與事蹟對照表」。"
       },
       {
         conclusion: "附錄一完整彙整本章 8 項心理學實驗與實證數據，從 4.5 萬人後設分析到銷售、籃球、記憶力實驗，提供最堅實的科學證據。",
         detail: "這張矩陣涵蓋了書頁 p.151 到 p.171 的所有核心數據：包含 Sosniak 鋼琴家每日 1 小時、127 項研究後設分析、醫療快針護士與外國電影即興劇、職棒門票銷售 +43%、巴西青少年籃球 75% 刻意玩樂、申智海電話簿對比實驗、柯瑞 789 場破紀錄與 YouTuber 50 天 8%→40%，以及學後休息 10 分鐘提升 10%–30% 記憶力。",
-        transition: "除了正文的實驗數據外，原書底部的註腳其實藏著極具深度的制度與社會學洞察，我們請看最後一頁附錄二。"
+        transition: "除了正文的實驗數據外，原書底部的註腳其實藏著極具深度的制度與社會學洞察，我們請看下一頁附錄二。"
       },
       {
         conclusion: "附錄二深挖原書四處關鍵註腳（註 47、49、50、51）並串聯前四章系統：品格技能決定成長方向，而動力鷹架則提供走得長遠的燃料。",
         detail: "特別值得深挖的是原注 49（跑步機原是 19 世紀初英國監獄每日踩 6 小時的酷刑，可怕在於單調的穩定性）以及原注 50（棉花糖測試除了刻意玩樂策略，也反映穩定環境的社會支持與信任）。當我們將 CH1 追求不適感、CH2 人形海綿、CH3 不完美主義者與 CH4 改變日常磨練結合，就能建立「高標準目標（CH3）＋好玩交錯形式（CH4）」的超級個體成長系統。",
-        transition: "以上就是《隱性潛能》第四章「改變日常磨練」的 10 分鐘精華導讀簡報。感謝聆聽，現在就挑選一項日常任務，開始你的第一個 20 分鐘刻意玩樂吧！"
+        transition: "接下來最後兩頁附錄三，我們把本章所有登場的真實人物——包含相片、姓名、真實經歷與書中案例事蹟——做成完整視覺檔案對照表。"
+      },
+      {
+        conclusion: "附錄三之一彙整本章六位核心案例主角、NBA 巨星與幕後教練的相片與經歷：從葛蘭妮與福布斯、到柯瑞與佩恩，展現「海綿品格 × 教練玩樂鷹架」的真實力量。",
+        detail: "本頁呈現 6 位關鍵人物：① 依芙琳・葛蘭妮女爵士（12歲全聾到奪3座葛萊美獎與2015極地音樂獎）、② 啟蒙恩師羅恩・福布斯（蘇格蘭打擊樂教師，設計貼牆聽震動與小鼓巴哈挑戰）、③ 史蒂芬・柯瑞（NBA歷史三分球王，789場破紀錄）、④ 私人訓練師布蘭登・佩恩（Accelerate Basketball創辦人，設計21分遊戲與每20分鐘交錯練習）、⑤ 盧卡・唐西奇（跟隨佩恩交錯訓練減重4.5公斤提速）、⑥ 勇士隊總教練史蒂夫・科爾（9枚冠軍戒得主，盛讚柯瑞日復一日的專注）。",
+        transition: "看完了核心主角與運動教練群，下一頁附錄三之二我們繼續對照書中提到的百老匯與古典樂巨匠、遊戲理論家與實證心理學家。"
+      },
+      {
+        conclusion: "附錄三之二彙整百老匯鬼才米蘭達、大提琴家馬友友、遊戲理論家德科文、心理學家群與古典音樂巨匠，印證「和諧熱情與主動留白」是跨越三百年的大師日常。",
+        detail: "本頁涵蓋：① 林-曼努爾・米蘭達（在度假泳池浮床上構思出《漢密爾頓》）、② 馬友友（19座葛萊美獎得主，日練3–6小時且避開晨夜）、③ 伯納德・德科文（新遊戲基金會創辦人，p.146開篇題辭作者）、④ 安傑拉・達克沃斯與作者亞當・格蘭特（以及申智海、索斯尼亞克、羅斯巴德等學者，提供棉花糖測試與電話簿實驗實證）、⑤ 莫札特與巴哈（莫札特是「熬過了」父親強迫苦練的折磨，巴哈則是葛蘭妮小鼓挑戰曲目）、⑥ 蕭邦與貝多芬等大師（蕭邦勸學生夏日練琴不超過2小時，貝多芬、柴可夫斯基與馬勒每日散步時間與工作等長）。",
+        transition: "以上就是《隱性潛能》第四章「改變日常磨練」包含附錄人物圖鑑的 16 頁完整導讀簡報。感謝聆聽！"
       }
     ];
 
     let currentSlide = 1;
-    const totalSlides = 14;
+    const totalSlides = 16;
 
     function updateSlideView() {
       document.querySelectorAll('.slide-canvas').forEach(el => {
